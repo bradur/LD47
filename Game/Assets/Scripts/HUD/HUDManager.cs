@@ -31,7 +31,7 @@ public class HUDManager : MonoBehaviour
     }
 
     private void CreaterResourceBar(PlayerResource resource) {
-        Debug.Log("Creating a resource bar");
+        //Debug.Log("Creating a resource bar");
         HUDResourceBar newBar = Prefabs.Instantiate<HUDResourceBar>();
         if (resource.Type == PlayerResourceType.Energy) {
             newBar.Init(resource, energyBarContainer);

@@ -296,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConfig: {fileID: 11400000, guid: 318a7a6ea0bdf9841b9de7ac8ca7ecd3, type: 2}
   tileConfig: {fileID: 11400000, guid: f3d86bad52a96c6458a6dbdfa7ac4c6d, type: 2}
+  playerInventory: {fileID: 11400000, guid: e359b2a20a673334987e6abf8bb37adf, type: 2}
 --- !u!1 &3599854542084452915
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ using System.Linq;
 
 public class Configs : MonoBehaviour
 {
-
     public static Configs main;
     void Awake()
     {
@@ -19,5 +18,9 @@ public class Configs : MonoBehaviour
     [SerializeField]
     private TilePrefabConfigScriptableObject tileConfig;
     public TilePrefabConfigScriptableObject TileConfig { get { return tileConfig; } }
+
+    [SerializeField]
+    private PlayerInventory playerInventory;
+    public PlayerInventory PlayerInventory { get { return playerInventory; } }
 
 }

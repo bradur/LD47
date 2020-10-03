@@ -17,10 +17,12 @@ public class LoopManager : MonoBehaviour
         if (objs.Length > 1)
         {
             Destroy(this.gameObject);
+            return;
         }
 
         main = this;
         DontDestroyOnLoad(this.gameObject);
+        Configs.main.PlayerInventory.Init();
     }
 
     void Start()

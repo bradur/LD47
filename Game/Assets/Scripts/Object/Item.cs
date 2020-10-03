@@ -28,6 +28,10 @@ public class Item : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public ItemType GetItemType() {
+        return ItemType;
+    }
 }
 
 public enum ItemType
