@@ -5,6 +5,9 @@ using UnityEngine;
 public class Damageable : MonoBehaviour
 {
     [SerializeField]
+    public DamageableType type = DamageableType.CHARACTER;
+
+    [SerializeField]
     Color HurtTint = Color.red;
 
     [SerializeField]
@@ -67,4 +70,10 @@ public class Damageable : MonoBehaviour
             renderers[i].color = finalColor;
         }
     }
+}
+
+public enum DamageableType
+{
+    CHARACTER,
+    WALL
 }

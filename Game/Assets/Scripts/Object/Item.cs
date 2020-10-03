@@ -34,5 +34,6 @@ public enum ItemType
 {
     PLACEHOLDER,
     BASIC_SWORD,
-    BASIC_BOOTS
+    BASIC_BOOTS,
+    PICKAXE
 }
