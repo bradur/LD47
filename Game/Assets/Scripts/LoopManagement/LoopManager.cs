@@ -7,6 +7,8 @@ public class LoopManager : MonoBehaviour
 {
     public static LoopManager main;
 
+    private int loopCount = 0;
+
     void Awake()
     {
         this.transform.parent = null;
@@ -35,6 +37,8 @@ public class LoopManager : MonoBehaviour
 
         if (reload)
         {
+            loopCount++;
+            Debug.Log("Loop #" + loopCount + " starting");
             string sceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
