@@ -6,10 +6,13 @@ using UnityEngine;
 public class PlayerStrike : MonoBehaviour
 {
     [SerializeField]
-    GameObject PlayerWeapon;
-
+    GameObject Club;
     [SerializeField]
-    bool WeaponEnabled;
+    GameObject Sword;
+    [SerializeField]
+    GameObject PickAxe;
+    
+    InventoryItem equippedWeapon;
 
     CharacterAnimator charAnim;
 
@@ -19,29 +22,56 @@ public class PlayerStrike : MonoBehaviour
     void Start()
     {
         charAnim = GetComponentInChildren<CharacterAnimator>();
-        PlayerWeapon.SetActive(WeaponEnabled);
         inventory = Configs.main.PlayerInventory;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (WeaponEnabled && Input.GetKey(KeyCode.Mouse0))
+        if (equippedWeapon != null && Input.GetKey(KeyCode.Mouse0))
         {
             charAnim.Strike();
             PlayerResources.main.Spend(PlayerResourceType.Energy, Configs.main.Game.EnergySpentByHit);
         }
 
-        if (inventory.PlayerItems.Any(x => x.Slot == InventorySlot.WEAPON))
+        var weapon = inventory.PlayerItems.FindAll(x => x.Slot == InventorySlot.WEAPON)
+            .OrderByDescending(x => x.ItemLevel)
+            .First();
+        if (weapon != null)
         {
-            EnableWeapon();
+            EnableWeapon(weapon);
         }
     }
 
-    public void EnableWeapon()
+    public void EnableWeapon(InventoryItem weapon)
     {
-        WeaponEnabled = true;
-        PlayerWeapon.SetActive(WeaponEnabled);
+        if (weapon.Slot != InventorySlot.WEAPON)
+        {
+            return;
+        }
+
+        equippedWeapon = weapon;
+        switch (weapon.ItemLevel)
+        {
+            case 0:
+                Club.SetActive(true);
+                Sword.SetActive(false);
+                PickAxe.SetActive(false);
+                break;
+            case 1:
+                Club.SetActive(false);
+                Sword.SetActive(true);
+                PickAxe.SetActive(false);
+                break;
+            case 2:
+                Club.SetActive(false);
+                Sword.SetActive(false);
+                PickAxe.SetActive(true);
+                break;
+
+        }
     }
+
+
 
 }

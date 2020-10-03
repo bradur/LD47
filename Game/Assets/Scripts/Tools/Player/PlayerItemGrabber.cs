@@ -25,13 +25,5 @@ public class PlayerItemGrabber : MonoBehaviour
         Debug.Log("Picked up " + item.ItemType);
 
         Configs.main.PlayerInventory.GrabItem(item.ItemType);
-
-        switch(item.ItemType)
-        {
-            case ItemType.PICKAXE:
-                collisionDamager.DamageMultipliers[DamageableType.WALL] = 100.0f;
-                break;
-        }
-
     }
 }

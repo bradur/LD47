@@ -17,8 +17,24 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: 4d838851885302340a7e6ef0be0a9918, type: 3}
     itemLevel: 1
     slot: 0
-  playerItems:
-  - type: 2
-    itemIcon: {fileID: 21300000, guid: 4d838851885302340a7e6ef0be0a9918, type: 3}
-    itemLevel: 1
+  - type: 1
+    itemIcon: {fileID: 21300000, guid: f43e1438d7da1f146969ef5b2ace7afa, type: 3}
+    itemLevel: 0
     slot: 0
+  - type: 3
+    itemIcon: {fileID: 21300000, guid: 5e57f020c03b1e042941bd7c7d77f1a0, type: 3}
+    itemLevel: 2
+    slot: 0
+  - type: 4
+    itemIcon: {fileID: 21300000, guid: e46c0042df24c804f81797b2d6ef8585, type: 3}
+    itemLevel: 0
+    slot: 1
+  - type: 5
+    itemIcon: {fileID: 21300000, guid: f8751d4fdaa07c84ebd027e531549897, type: 3}
+    itemLevel: 1
+    slot: 1
+  - type: 6
+    itemIcon: {fileID: 21300000, guid: 002e9a101994aed40b4d137d49fb9393, type: 3}
+    itemLevel: 2
+    slot: 1
+  playerItems: []
