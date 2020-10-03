@@ -520,6 +520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7638916467115595160}
   - component: {fileID: 74083238417015361}
+  - component: {fileID: 2386935824733511665}
   m_Layer: 0
   m_Name: Weapon Collider
   m_TagString: Untagged
@@ -571,3 +572,16 @@ PolygonCollider2D:
       - {x: -0.3212386, y: -0.45638728}
       - {x: -0.08623415, y: -0.45154202}
       - {x: 0.13126159, y: 0.9788552}
+--- !u!114 &2386935824733511665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434229465294473381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e587efdd548c6046b5ae4dcebd40dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 10
