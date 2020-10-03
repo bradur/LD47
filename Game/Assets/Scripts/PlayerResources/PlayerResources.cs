@@ -60,9 +60,6 @@ public class PlayerResources : MonoBehaviour
     public bool SpendEnergy(int amount)
     {
         bool spent = Spend(PlayerResourceType.Energy, amount);
-        if (!spent) {
-            UIManager.main.OpenResetDialog(ResetCause.EnergyLoss, DialogFinished);
-        }
         return spent;
     }
 
@@ -119,7 +116,7 @@ public class PlayerResource
 
     public bool Spend(int amount)
     {
-        if (currentValue <= amount)
+        if (currentValue < amount)
         {
             return false;
         }

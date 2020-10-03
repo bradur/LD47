@@ -27,26 +27,31 @@ public class LoopManager : MonoBehaviour
 
     void Start()
     {
-        HUDManager.main.Init();
         PlayerResources.main.Init();
         Reset();
     }
 
-    public void AfterReset() {
+    public void AfterReset()
+    {
 
     }
 
     public void Reset(bool reload = false)
     {
-        PlayerResources.main.Reset();
         HUDManager.main.Refresh();
 
         if (reload)
         {
             loopCount++;
-            Debug.Log("Loop #" + loopCount + " starting");
-            string sceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+
+            UIManager.main.OpenResetDialog(ResetCause.EnergyLoss, AfterDialog);
         }
+    }
+
+    public void AfterDialog()
+    {
+        Debug.Log("Loop #" + loopCount + " starting");
+        string sceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 }
