@@ -15,7 +15,7 @@ public class Prefabs: MonoBehaviour
         return GetPrefab(typeof(T).Name);
     }
 
-    private static GameObject GetPrefab(string name) {
+    public static GameObject GetPrefab(string name) {
         GameObject prefab;
         if (cachedPrefabs.ContainsKey(name)) {
             prefab = cachedPrefabs[name];
