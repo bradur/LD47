@@ -16,7 +16,7 @@ public class CharacterAnimator : MonoBehaviour
     Animator anim;
 
     private float strikeTimer;
-    private float STRIKE_GRACE_PERIOD = 1.0f;
+    private float STRIKE_GRACE_PERIOD = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +27,6 @@ public class CharacterAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Strike();
-        }
-
         if (strikeTimer < Time.time)
         {
             StrikingRequested = false;
