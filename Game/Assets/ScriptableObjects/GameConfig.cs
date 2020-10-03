@@ -14,4 +14,8 @@ public class GameConfig : ScriptableObject
     private float distanceMovedPerXp = 2;
     public float DistanceMovedPerXP { get { return distanceMovedPerXp; } }
     public float EnergyPerDistanceMoved { get { return EnergyPerDistanceMoved; } }
+
+    [SerializeField]
+    private Gradient xpBarGradient;
+    public Gradient XPBarGradient { get { return xpBarGradient; } }
 }
