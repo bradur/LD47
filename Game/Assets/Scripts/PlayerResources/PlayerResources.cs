@@ -26,13 +26,16 @@ public class PlayerResources : MonoBehaviour
     {
         foreach (PlayerResource resource in config.Resources)
         {
-            resource.Value = resource.InitialValue;
+            resource.Reset();
         }
     }
 
     public void Gain(PlayerResourceType resourceType, int amount)
     {
-
+        config.Resources
+            .Find(resource => resource.Type == resourceType)
+            .Gain(amount);
+        HUDManager.main.Refresh();
     }
 
     public bool SpendEnergy(int amount)
@@ -69,11 +72,17 @@ public class PlayerResource
     private int initialValue;
     public int InitialValue { get { return initialValue; } }
 
+    [SerializeField]
     private bool isSkill = false;
     public bool IsSkill { get { return isSkill; } }
 
     private int currentValue;
     public int Value { get { return currentValue; } set { currentValue = value; } }
+
+
+    [SerializeField]
+    private int xpPerLevel = 10;
+    public int XpPerLevel { get { return xpPerLevel; } }
 
     public bool Spend(int amount)
     {
@@ -87,6 +96,22 @@ public class PlayerResource
             return true;
         }
     }
+
+    public void Gain(int amount){
+        currentValue += amount;
+    }
+
+    public void Reset()
+    {
+        if (isSkill)
+        {
+
+        }
+        else
+        {
+            currentValue = initialValue;
+        }
+    }
 }
 
 public enum PlayerResourceType
@@ -94,7 +119,6 @@ public enum PlayerResourceType
     None,
     Energy,
     Health,
-
-    AthleticsXP,
-    StrengthXP
+    AthleticsSkill,
+    StrengthSkill
 }

@@ -5,13 +5,9 @@ using UnityEngine;
 public class PlayerMovementTracker : MonoBehaviour
 {
 
-/*
-    private float distanceMoved;
-    private float distanceToMoveForXP;
-*/
     private Vector2 prevPosition;
-    private float distanceMovedForXP;
-    private float distanceMovedForEnergy;
+    private float distanceMovedForXP = 0;
+    private float distanceMovedForEnergy = 0;
 
     private GameConfig config;
     void Start()
@@ -26,7 +22,7 @@ public class PlayerMovementTracker : MonoBehaviour
         distanceMovedForEnergy += Vector2.Distance(prevPosition, transform.position);
         if (distanceMovedForXP >= config.DistanceMovedPerXP) {
             distanceMovedForXP = 0;
-            PlayerResources.main.SpendEnergy(1);
+            PlayerResources.main.Gain(PlayerResourceType.AthleticsSkill, 1);
         }
         if (distanceMovedForEnergy >= 1) {
             distanceMovedForEnergy = 0;
