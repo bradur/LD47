@@ -22,8 +22,25 @@ public class PlayerResources : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        Reset();
+        HUDManager.main.Refresh();
+    }
+
+    void FixedUpdate()
+    {
+        // there might be resources that are !isSkill that don't cause reset!
+        bool reset = config.Resources.Where(resource => !resource.IsSkill).Any(resource => resource.Value <= 0);
+        if (reset) {
+            LoopManager.main.Reset(true);
+        }
+    }
+
     public void Reset()
     {
+        config = Configs.main.Game;
+        HUDManager.main.Init();
         foreach (PlayerResource resource in config.Resources)
         {
             resource.Reset();
