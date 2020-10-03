@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerStrike : MonoBehaviour
@@ -12,11 +13,14 @@ public class PlayerStrike : MonoBehaviour
 
     CharacterAnimator charAnim;
 
+    PlayerInventory inventory;
+
     // Start is called before the first frame update
     void Start()
     {
         charAnim = GetComponentInChildren<CharacterAnimator>();
         PlayerWeapon.SetActive(WeaponEnabled);
+        inventory = Configs.main.PlayerInventory;
     }
 
     // Update is called once per frame
@@ -26,6 +30,11 @@ public class PlayerStrike : MonoBehaviour
         {
             charAnim.Strike();
             PlayerResources.main.Spend(PlayerResourceType.Energy, Configs.main.Game.EnergySpentByHit);
+        }
+
+        if (inventory.PlayerItems.Any(x => x.Slot == InventorySlot.WEAPON))
+        {
+            EnableWeapon();
         }
     }
 

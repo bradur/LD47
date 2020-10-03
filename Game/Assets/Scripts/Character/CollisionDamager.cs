@@ -7,6 +7,12 @@ public class CollisionDamager : MonoBehaviour
     [SerializeField]
     public float Damage;
 
+    public Dictionary<DamageableType, float> DamageMultipliers = new Dictionary<DamageableType, float>()
+    {
+        { DamageableType.CHARACTER, 1.0f },
+        { DamageableType.WALL, 1.0f }
+    };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +30,8 @@ public class CollisionDamager : MonoBehaviour
         var damageable = other.GetComponent<Damageable>();
         if (damageable != null)
         {
-            damageable.Hurt(Damage);
+            var multiplier = DamageMultipliers[damageable.type];
+            damageable.Hurt(multiplier * Damage);
             PlayerResources.main.Gain(PlayerResourceType.StrengthSkill, Configs.main.Game.StrengthXPPerHit);
         }
     }

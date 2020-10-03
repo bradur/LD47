@@ -5,11 +5,13 @@ using UnityEngine;
 public class PlayerItemGrabber : MonoBehaviour
 {
     private PlayerStrike playerStrike;
+    private CollisionDamager collisionDamager;
 
     // Start is called before the first frame update
     void Start()
     {
         playerStrike = GetComponent<PlayerStrike>();
+        collisionDamager = GetComponentInChildren<CollisionDamager>(true);
     }
 
     // Update is called once per frame
@@ -22,10 +24,12 @@ public class PlayerItemGrabber : MonoBehaviour
     {
         Debug.Log("Picked up " + item.ItemType);
 
+        Configs.main.PlayerInventory.GrabItem(item.ItemType);
+
         switch(item.ItemType)
         {
-            case ItemType.BASIC_SWORD:
-                playerStrike.EnableWeapon();
+            case ItemType.PICKAXE:
+                collisionDamager.DamageMultipliers[DamageableType.WALL] = 100.0f;
                 break;
         }
 

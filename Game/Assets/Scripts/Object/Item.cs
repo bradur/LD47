@@ -28,11 +28,19 @@ public class Item : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public ItemType GetItemType() {
+        return ItemType;
+    }
 }
 
 public enum ItemType
 {
     PLACEHOLDER,
-    BASIC_SWORD,
-    BASIC_BOOTS
+    CLUB,
+    SWORD,
+    PICKAXE,
+    SLIPPERS,
+    LEATHER_BOOTS,
+    MAGIC_BOOTS
 }
