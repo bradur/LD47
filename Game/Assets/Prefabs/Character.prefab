@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 408905224235098491}
   - component: {fileID: 408905224235098490}
+  - component: {fileID: 249859361192441465}
   m_Layer: 0
   m_Name: Right hand
   m_TagString: Untagged
@@ -83,6 +84,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &249859361192441465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408905224235098488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb72a59403955f41ad5313ca02dc829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &408905224647631823
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +140,7 @@ GameObject:
   - component: {fileID: 408905225617209879}
   - component: {fileID: 408905225617209878}
   - component: {fileID: 5506322023997977260}
+  - component: {fileID: 4230386299763395855}
   m_Layer: 0
   m_Name: Character Sprite
   m_TagString: Untagged
@@ -235,6 +249,18 @@ MonoBehaviour:
   StrikingRequested: 0
   Walking: 0
   Striking: 0
+--- !u!114 &4230386299763395855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408905225617209877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb72a59403955f41ad5313ca02dc829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &408905225839970357
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 408905225839970356}
   - component: {fileID: 408905225839970359}
+  - component: {fileID: 7429950277378932427}
   m_Layer: 0
   m_Name: Left Hand
   m_TagString: Untagged
@@ -317,6 +344,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7429950277378932427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408905225839970357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb72a59403955f41ad5313ca02dc829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &408905225937141917
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1467746122251886228}
   - component: {fileID: 8233829729609797347}
+  - component: {fileID: 6894186485803986275}
   m_Layer: 0
   m_Name: Weapon Sprite
   m_TagString: Untagged
@@ -525,6 +565,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6894186485803986275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919707910677575980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb72a59403955f41ad5313ca02dc829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8434229465294473381
 GameObject:
   m_ObjectHideFlags: 0
