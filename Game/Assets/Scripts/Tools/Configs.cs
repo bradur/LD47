@@ -17,6 +17,10 @@ public class Configs : MonoBehaviour
     public GameConfig Game { get { return gameConfig; } }
 
     [SerializeField]
+    private UIConfig uiConfig;
+    public UIConfig UI { get { return uiConfig; } }
+
+    [SerializeField]
     private TilePrefabConfigScriptableObject tileConfig;
     public TilePrefabConfigScriptableObject TileConfig { get { return tileConfig; } }
 

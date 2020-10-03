@@ -22,10 +22,17 @@ MonoBehaviour:
   - resourceIcon: {fileID: 21300000, guid: 109b5ed61ff02a247a2a822cce6508e5, type: 3}
     resourceColor: {r: 0, g: 0.6912031, b: 1, a: 1}
     resourceType: 3
-    initialValue: 0
+    initialValue: 15
+    isSkill: 1
+    xpPerLevel: 10
+  - resourceIcon: {fileID: 21300000, guid: dde3573b1c1f3f4469bb53b790774141, type: 3}
+    resourceColor: {r: 1, g: 0, b: 0.2696724, a: 1}
+    resourceType: 4
+    initialValue: 5
     isSkill: 1
     xpPerLevel: 10
   distanceMovedPerXp: 2
+  energySpentByUnitWalked: 5
   xpBarGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.049433887, b: 0, a: 1}

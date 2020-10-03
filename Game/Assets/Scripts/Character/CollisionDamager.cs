@@ -25,6 +25,7 @@ public class CollisionDamager : MonoBehaviour
         if (damageable != null)
         {
             damageable.Hurt(Damage);
+            PlayerResources.main.Gain(PlayerResourceType.StrengthSkill, Configs.main.Game.StrengthXPPerHit);
         }
     }
 }

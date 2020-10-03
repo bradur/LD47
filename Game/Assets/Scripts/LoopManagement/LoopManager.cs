@@ -16,6 +16,10 @@ public class LoopManager : MonoBehaviour
         Reset();
     }
 
+    public void AfterReset() {
+
+    }
+
     public void Reset() {
         PlayerResources.main.Reset();
         HUDManager.main.Refresh();

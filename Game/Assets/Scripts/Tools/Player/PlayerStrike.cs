@@ -25,6 +25,7 @@ public class PlayerStrike : MonoBehaviour
         if (WeaponEnabled && Input.GetKey(KeyCode.Mouse0))
         {
             charAnim.Strike();
+            PlayerResources.main.Spend(PlayerResourceType.Energy, Configs.main.Game.EnergySpentByHit);
         }
     }
 
