@@ -47,9 +47,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09690964, y: 0.06270623}
+  m_Offset: {x: -0.09279765, y: 0.43613327}
   serializedVersion: 2
-  m_Radius: 0.91044056
+  m_Radius: 0.57166636
 --- !u!114 &3525929726418150990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7fdf5618c34144bb722278e481e0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HurtTint: {r: 1, g: 0, b: 0, a: 1}
+  Health: 30
 --- !u!50 &7109392626620950488
 Rigidbody2D:
   serializedVersion: 4
@@ -93,6 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4471992404242336128}
   - component: {fileID: 8478326807220209420}
+  - component: {fileID: 8183513300030643307}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -165,3 +168,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8183513300030643307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669429288986275544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb72a59403955f41ad5313ca02dc829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

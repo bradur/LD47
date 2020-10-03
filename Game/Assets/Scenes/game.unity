@@ -411,8 +411,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 194585605
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -2972,6 +2972,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 408905225937141984, guid: 4ceb5479c4478d546ad96b2c46a7f41c, type: 3}
   m_PrefabInstance: {fileID: 408905225809596577}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1814647432
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1901621976867875923, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901621976867875923, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901621976867875923, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901621976867875923, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901621976867875923, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901621976867875923, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901621976867875923, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901621976867875923, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901621976867875923, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901621976867875923, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901621976867875923, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799551634255110194, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_Name
+      value: Totem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
 --- !u!1001 &1962048186
 PrefabInstance:
   m_ObjectHideFlags: 0
