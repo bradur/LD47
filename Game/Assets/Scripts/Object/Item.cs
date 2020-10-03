@@ -33,7 +33,10 @@ public class Item : MonoBehaviour
 public enum ItemType
 {
     PLACEHOLDER,
-    BASIC_SWORD,
-    BASIC_BOOTS,
-    PICKAXE
+    CLUB,
+    SWORD,
+    PICKAXE,
+    SLIPPERS,
+    LEATHER_BOOTS,
+    MAGIC_BOOTS
 }

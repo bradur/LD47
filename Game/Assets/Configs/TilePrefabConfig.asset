@@ -27,3 +27,11 @@ MonoBehaviour:
     prefab: {fileID: 5564584154102772006, guid: 17aeec564191a6f4c87a00d2678421d8, type: 3}
   - tile: {fileID: 11400000, guid: 5e0a286f456ae204da7da13772660aaa, type: 2}
     prefab: {fileID: 6130633852874822608, guid: 64925972b7c6ebe4a9efe908ce02782a, type: 3}
+  - tile: {fileID: 11400000, guid: f4b2a4a1aa0300a45a00deb497b041da, type: 2}
+    prefab: {fileID: 6130633852874822608, guid: c3bceffb19d95fb429c5c781cbf8ab78, type: 3}
+  - tile: {fileID: 11400000, guid: c737223d04fc6f84eab167b84dc9fadb, type: 2}
+    prefab: {fileID: 5564584154102772006, guid: 7ad491db7f240194282493b827264652, type: 3}
+  - tile: {fileID: 11400000, guid: 3461dd2d79757d9428ed66fea258404a, type: 2}
+    prefab: {fileID: 6130633852874822608, guid: 193cd42e703ff1f4ab269716008d9e50, type: 3}
+  - tile: {fileID: 11400000, guid: 16427c254bb6bdf43885e038659a814f, type: 2}
+    prefab: {fileID: 6130633852874822608, guid: 5735eaaeb3c581c4695c058481e95ad7, type: 3}

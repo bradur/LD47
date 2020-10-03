@@ -26,7 +26,7 @@ public class PlayerItemGrabber : MonoBehaviour
 
         switch(item.ItemType)
         {
-            case ItemType.BASIC_SWORD:
+            case ItemType.SWORD:
                 playerStrike.EnableWeapon();
                 break;
             case ItemType.PICKAXE:

@@ -57,7 +57,7 @@ public class Damageable : MonoBehaviour
         else
         {
             tint(HurtTint, 0.0f);
-            if (!positionsReset)
+            if ((HurtShakeX > 0.01f || HurtShakeY > 0.01f) && !positionsReset)
             {
                 positionsReset = true;
                 transform.position = hurtPosition;
