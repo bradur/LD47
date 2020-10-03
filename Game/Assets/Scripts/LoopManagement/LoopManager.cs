@@ -32,6 +32,10 @@ public class LoopManager : MonoBehaviour
         Reset();
     }
 
+    public void AfterReset() {
+
+    }
+
     public void Reset(bool reload = false)
     {
         PlayerResources.main.Reset();

@@ -30,6 +30,7 @@ public class CollisionDamager : MonoBehaviour
         {
             var damage = damageable.type == DamageableType.WALL ? WallDamage : Damage;
             damageable.Hurt(damage);
+            PlayerResources.main.Gain(PlayerResourceType.StrengthSkill, Configs.main.Game.StrengthXPPerHit);
         }
     }
 }

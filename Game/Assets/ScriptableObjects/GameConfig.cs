@@ -13,7 +13,17 @@ public class GameConfig : ScriptableObject
     [SerializeField]
     private float distanceMovedPerXp = 2;
     public float DistanceMovedPerXP { get { return distanceMovedPerXp; } }
-    public float EnergyPerDistanceMoved { get { return EnergyPerDistanceMoved; } }
+
+    [SerializeField]
+    private int energySpentByUnitWalked = 1;
+    public int EnergySpentByUnitWalked { get { return energySpentByUnitWalked; } }
+
+    [SerializeField]
+    private int strengthXPPerHit = 1;
+    public int StrengthXPPerHit { get { return strengthXPPerHit; } }
+    [SerializeField]
+    private int energySpentByHit = 5;
+    public int EnergySpentByHit { get { return energySpentByHit; } }
 
     [SerializeField]
     private Gradient xpBarGradient;

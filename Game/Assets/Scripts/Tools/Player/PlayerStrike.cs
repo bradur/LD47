@@ -31,6 +31,7 @@ public class PlayerStrike : MonoBehaviour
         if (equippedWeapon != null && Input.GetKey(KeyCode.Mouse0))
         {
             charAnim.Strike();
+            PlayerResources.main.Spend(PlayerResourceType.Energy, Configs.main.Game.EnergySpentByHit);
         }
 
         var weapon = inventory.PlayerItems.FindAll(x => x.Slot == InventorySlot.WEAPON)

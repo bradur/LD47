@@ -26,7 +26,7 @@ public class PlayerMovementTracker : MonoBehaviour
         }
         if (distanceMovedForEnergy >= 1) {
             distanceMovedForEnergy = 0;
-            PlayerResources.main.SpendEnergy(1);
+            PlayerResources.main.SpendEnergy(config.EnergySpentByUnitWalked);
         }
         prevPosition = transform.position;
     }

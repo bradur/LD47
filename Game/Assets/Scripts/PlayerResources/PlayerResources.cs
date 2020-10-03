@@ -19,6 +19,8 @@ public class PlayerResources : MonoBehaviour
         foreach (PlayerResource resource in config.Resources)
         {
             resource.Value = resource.InitialValue;
+            resource.Level = 0;
+            resource.TotalXp = 0;
         }
     }
 
@@ -57,7 +59,15 @@ public class PlayerResources : MonoBehaviour
 
     public bool SpendEnergy(int amount)
     {
-        return Spend(PlayerResourceType.Energy, amount);
+        bool spent = Spend(PlayerResourceType.Energy, amount);
+        if (!spent) {
+            UIManager.main.OpenResetDialog(ResetCause.EnergyLoss, DialogFinished);
+        }
+        return spent;
+    }
+
+    public void DialogFinished () {
+
     }
 
     public bool Spend(PlayerResourceType resourceType, int amount)
@@ -97,13 +107,19 @@ public class PlayerResource
     public int Value { get { return currentValue; } set { currentValue = value; } }
 
 
+    private int totalXp;
+    public int TotalXp { get { return totalXp; } set { totalXp = value; } }
+
     [SerializeField]
     private int xpPerLevel = 10;
     public int XpPerLevel { get { return xpPerLevel; } }
 
+    private int level = 0;
+    public int Level { get { return level; } set { level = value; } }
+
     public bool Spend(int amount)
     {
-        if (currentValue < amount)
+        if (currentValue <= amount)
         {
             return false;
         }
@@ -114,7 +130,8 @@ public class PlayerResource
         }
     }
 
-    public void Gain(int amount){
+    public void Gain(int amount)
+    {
         currentValue += amount;
     }
 
