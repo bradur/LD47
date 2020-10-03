@@ -7,6 +7,9 @@ public class Damageable : MonoBehaviour
     [SerializeField]
     Color HurtTint = Color.red;
 
+    [SerializeField]
+    float Health = 30.0f;
+
     SpriteRenderer[] renderers;
     Color[] originalColors;
 
@@ -40,7 +43,20 @@ public class Damageable : MonoBehaviour
 
     public void Hurt(float damage)
     {
-        hurtTimer = Time.time + HURT_DURATION;
+        Health -= damage;
+        if (Health > 0)
+        {
+            hurtTimer = Time.time + HURT_DURATION;
+        }
+        else
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
     private void tint(Color color, float amount)
