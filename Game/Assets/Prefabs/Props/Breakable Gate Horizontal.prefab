@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4871004565293902742}
   - component: {fileID: 175176288475229925}
   m_Layer: 0
-  m_Name: Breakable Gate
+  m_Name: Breakable Gate Horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   Health: 20
   HurtShakeX: 1
   HurtShakeY: 0
+  XpPerHit: 0
 --- !u!61 &175176288475229925
 BoxCollider2D:
   m_ObjectHideFlags: 0

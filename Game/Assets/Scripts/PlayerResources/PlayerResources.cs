@@ -32,7 +32,7 @@ public class PlayerResources : MonoBehaviour
         inventory = Configs.main.PlayerInventory;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         // there might be resources that are !isSkill that don't cause reset!
         bool reset = config.Resources.Where(resource => !resource.IsSkill).Any(resource => resource.Value <= 0);
@@ -164,6 +164,7 @@ public class PlayerResource
     {
         if (currentValue < amount)
         {
+            currentValue = 0;
             return false;
         }
         else

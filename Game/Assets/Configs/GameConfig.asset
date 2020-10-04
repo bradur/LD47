@@ -33,8 +33,7 @@ MonoBehaviour:
     baseXpPerLevel: 10
   distanceMovedPerXp: 2
   baseDistanceWalkedPerEnergy: 0.5
-  strengthXPPerHit: 1
-  baseEnergySpentByHit: 30
+  baseEnergySpentByHit: 20
   xpBarGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.049433887, b: 0, a: 1}
