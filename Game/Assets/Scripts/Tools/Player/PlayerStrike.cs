@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerStrike : MonoBehaviour
+public class PlayerStrike : MonoBehaviour, AnimationListener
 {
     [SerializeField]
     GameObject Club;
@@ -23,6 +23,8 @@ public class PlayerStrike : MonoBehaviour
     {
         charAnim = GetComponentInChildren<CharacterAnimator>();
         inventory = Configs.main.PlayerInventory;
+
+        charAnim.RegisterListener(this);
     }
 
     // Update is called once per frame
@@ -31,7 +33,6 @@ public class PlayerStrike : MonoBehaviour
         if (equippedWeapon != null && Input.GetKey(KeyCode.Mouse0))
         {
             charAnim.Strike();
-            PlayerResources.main.Spend(PlayerResourceType.Energy, Configs.main.Game.EnergySpentByHit);
         }
 
         var weapon = inventory.PlayerItems.FindAll(x => x.Slot == InventorySlot.WEAPON)
@@ -72,6 +73,8 @@ public class PlayerStrike : MonoBehaviour
         }
     }
 
-
-
+    public void StrikeDone()
+    {
+        PlayerResources.main.Spend(PlayerResourceType.Energy, Configs.main.Game.EnergySpentByHit);
+    }
 }

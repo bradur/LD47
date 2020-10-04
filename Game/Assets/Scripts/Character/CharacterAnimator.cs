@@ -18,10 +18,17 @@ public class CharacterAnimator : MonoBehaviour
     private float strikeTimer;
     private float STRIKE_GRACE_PERIOD = 0.1f;
 
+    List<AnimationListener> listeners = new List<AnimationListener>();
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+    }
+
+    public void RegisterListener(AnimationListener listener)
+    {
+        listeners.Add(listener);
     }
 
     // Update is called once per frame
@@ -65,5 +72,9 @@ public class CharacterAnimator : MonoBehaviour
     public void StrikeDone()
     {
         Striking = false;
+        foreach (var listener in listeners)
+        {
+            listener.StrikeDone();
+        }
     }
 }
