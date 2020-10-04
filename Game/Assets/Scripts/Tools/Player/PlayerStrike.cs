@@ -53,21 +53,16 @@ public class PlayerStrike : MonoBehaviour, AnimationListener
         switch (weapon.ItemLevel)
         {
             case 0:
-                Club.SetActive(false);
-                Sword.SetActive(false);
-                PickAxe.SetActive(false);
-                break;
-            case 1:
                 Club.SetActive(true);
                 Sword.SetActive(false);
                 PickAxe.SetActive(false);
                 break;
-            case 2:
+            case 1:
                 Club.SetActive(false);
                 Sword.SetActive(true);
                 PickAxe.SetActive(false);
                 break;
-            case 3:
+            case 2:
                 Club.SetActive(false);
                 Sword.SetActive(false);
                 PickAxe.SetActive(true);
