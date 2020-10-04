@@ -31,6 +31,12 @@ MonoBehaviour:
     initialValue: 0
     isSkill: 1
     baseXpPerLevel: 10
+  - resourceIcon: {fileID: 21300000, guid: f12dc9667ecb65d408cb58fc7e45d7ed, type: 3}
+    resourceColor: {r: 1, g: 0, b: 0.2696724, a: 1}
+    resourceType: 2
+    initialValue: 100
+    isSkill: 0
+    baseXpPerLevel: 10
   distanceMovedPerXp: 2
   baseDistanceWalkedPerEnergy: 0.5
   baseEnergySpentByHit: 20

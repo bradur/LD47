@@ -7,12 +7,14 @@ public class UISkillXPGainBar : HUDResourceBar
 {
 
     private float runningValue = 0;
-    private float currentTarget = 0;
+    private int currentTarget = 0;
     private int xpGained = 0;
     private float updateSpeed = 1;
     private ReadyCallback xpReadyCallback;
     private int levelsGained = 0;
     private int levelsAtStart = 0;
+    private int currentLevel = 0;
+    private int currentLevelXpBound = 0;
     private List<int> xpsPerLevel;
 
     public void AnimateXpGain(ReadyCallback readyCallback)
@@ -21,9 +23,17 @@ public class UISkillXPGainBar : HUDResourceBar
         updateSpeed = Configs.main.UI.XpBarUpdateSpeed;
         xpGained = Resource.Value;
         levelsAtStart = Resource.Level;
+        currentLevel = levelsAtStart;
 
         levelsGained = 0;
+        XPContainer.SetActive(false);
+        if (xpGained > 0) {
+            BarContainer.SetActive(true);
+            IconContainer.SetActive(true);
+            LevelContainer.SetActive(true);
+        }
         xpsPerLevel = new List<int>();
+        currentLevelXpBound = Resource.XpPerLevel;
         while (xpGained >= Resource.XpPerLevel)
         {
             levelsGained++;
@@ -38,15 +48,24 @@ public class UISkillXPGainBar : HUDResourceBar
 
     public void SetCurrentTarget()
     {
-        if (xpGained > Resource.XpPerLevel)
+        if (xpsPerLevel.Count > 0) {
+            Debug.Log("Settings currentTarget to: {0} (count: {1})".Format(xpsPerLevel[0], xpsPerLevel.Count));
+            currentTarget = xpsPerLevel[0];
+            currentLevelXpBound = currentTarget;
+            xpsPerLevel.RemoveAt(0);
+        } else {
+            currentTarget = xpGained;
+            xpGained = 0;
+        }
+        /*if (xpGained > Resource.XpPerLevel)
         {
-            currentTarget = Resource.XpPerLevel;
+            currentTarget = xpsPerLevel;
             xpGained -= Resource.XpPerLevel;
         }
         else
         {
             currentTarget = xpGained;
-        }
+        }*/
     }
 
     public void Skip()
@@ -62,12 +81,14 @@ public class UISkillXPGainBar : HUDResourceBar
         while (runningValue < currentTarget)
         {
             runningValue += 1;
-            float percentage = (runningValue / (Resource.XpPerLevel * 1.0f));
-            UpdateView(percentage, runningValue, Resource.XpPerLevel);
+            float percentage = (runningValue / (currentLevelXpBound * 1.0f));
+            UpdateView(percentage, runningValue, currentLevelXpBound, (currentLevel + 1).ToString());
+            XPContainer.SetActive(false);
             yield return StartCoroutine(Tools.WaitForRealTime(1.0f / updateSpeed));
         }
-        if (runningValue >= Resource.XpPerLevel)
+        if (runningValue >= currentLevelXpBound)
         {
+            Debug.Log("{0} -> {1}".Format(runningValue, currentLevelXpBound));
             GainLevel();
         }
         else
@@ -80,7 +101,9 @@ public class UISkillXPGainBar : HUDResourceBar
     private void GainLevel()
     {
         runningValue = 0;
-        Resource.Level += 1;
+        currentLevel += 1;
+        UpdateView(0, runningValue, currentLevelXpBound, (currentLevel + 1).ToString());
+        XPContainer.SetActive(false);
         SetCurrentTarget();
         StartCoroutine("GainXP");
     }
