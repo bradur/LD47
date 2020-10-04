@@ -49,7 +49,7 @@ public class UISkillXPGainBar : HUDResourceBar
     public void SetCurrentTarget()
     {
         if (xpsPerLevel.Count > 0) {
-            Debug.Log("Settings currentTarget to: {0} (count: {1})".Format(xpsPerLevel[0], xpsPerLevel.Count));
+//            Debug.Log("Settings currentTarget to: {0} (count: {1})".Format(xpsPerLevel[0], xpsPerLevel.Count));
             currentTarget = xpsPerLevel[0];
             currentLevelXpBound = currentTarget;
             xpsPerLevel.RemoveAt(0);

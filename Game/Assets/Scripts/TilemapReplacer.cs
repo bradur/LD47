@@ -44,7 +44,7 @@ public class TilemapReplacer : MonoBehaviour
 
         if (tileObj == null)
         {
-            Debug.Log("Tile with the name " + tile.name + " is not defined in TilePrefabConfig.");
+            //Debug.Log("Tile with the name " + tile.name + " is not defined in TilePrefabConfig.");
             return;
         }
 
