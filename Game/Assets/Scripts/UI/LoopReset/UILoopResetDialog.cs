@@ -18,8 +18,12 @@ public class UILoopResetDialog : MonoBehaviour
     private GameObject container;
 
     private GameObject skillDisplay;
+    private Animator animator;
 
     void Start() {
+        Time.timeScale = 0f;
+        animator = GetComponent<Animator>();
+        animator.enabled = true;
         container.SetActive(true);
         config = Configs.main.UI;
         gameConfig = Configs.main.Game;
@@ -37,7 +41,9 @@ public class UILoopResetDialog : MonoBehaviour
     int xpBarsToUpdate = 0;
     int xpBarsUpdated = 0;
 
+    private bool isResetting = false;
     private bool waitForKey = false;
+    private ResetCause cause;
 
     public void DisplayGainedXp() {
         skillDisplay.SetActive(true);
@@ -65,18 +71,37 @@ public class UILoopResetDialog : MonoBehaviour
     }
 
     public void Reset(ResetCause cause, ReadyCallback readyCallback) {
+        if (!isResetting) {
+            this.cause = cause;
+            isResetting = true;
+            animator.SetTrigger("Open");
+            allReadyCallback = readyCallback;
+        }
+    }
+
+    public void ShowContainer() {
         container.SetActive(true);
-        allReadyCallback = readyCallback;
+    }
+
+    public void StartTextList() {
         animateTextList.StartFading(cause, AfterTextList);
+    }
+
+    public void Exit() {
+        skillDisplay.SetActive(false);
+        container.SetActive(false);
+        allReadyCallback();
+    }
+
+    public void StartScene() {
+        Time.timeScale = 1f;
     }
 
     void Update() {
         if (waitForKey && Input.GetKeyDown(config.SkipKey)) {
             txtPressAnyKeyToContinue.enabled = false;
             waitForKey = false;
-            allReadyCallback();
-            skillDisplay.SetActive(false);
-            container.SetActive(false);
+            animator.SetTrigger("Close");
         }
     }
 }
