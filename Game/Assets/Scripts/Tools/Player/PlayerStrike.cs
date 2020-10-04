@@ -35,9 +35,7 @@ public class PlayerStrike : MonoBehaviour, AnimationListener
             charAnim.Strike();
         }
 
-        var weapon = inventory.PlayerItems.FindAll(x => x.Slot == InventorySlot.WEAPON)
-            .OrderByDescending(x => x.ItemLevel)
-            .FirstOrDefault();
+        var weapon = inventory.GetWeapon();
         if (weapon != null)
         {
             EnableWeapon(weapon);
@@ -75,6 +73,6 @@ public class PlayerStrike : MonoBehaviour, AnimationListener
 
     public void StrikeDone()
     {
-        PlayerResources.main.Spend(PlayerResourceType.Energy, Configs.main.Game.EnergySpentByHit);
+        PlayerResources.main.Spend(PlayerResourceType.Energy, PlayerResources.main.GetEnergyPerStrike());
     }
 }

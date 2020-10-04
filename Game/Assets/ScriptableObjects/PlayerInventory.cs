@@ -29,4 +29,18 @@ public class PlayerInventory : ScriptableObject
 
         playerItems.Add(item);
     }
+
+    public InventoryItem GetBoots()
+    {
+        return PlayerItems.FindAll(x => x.Slot == InventorySlot.BOOTS)
+            .OrderByDescending(x => x.ItemLevel)
+            .FirstOrDefault();
+    }
+
+    public InventoryItem GetWeapon()
+    {
+        return PlayerItems.FindAll(x => x.Slot == InventorySlot.WEAPON)
+                    .OrderByDescending(x => x.ItemLevel)
+                    .FirstOrDefault();
+    }
 }

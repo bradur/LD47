@@ -21,12 +21,13 @@ public class PlayerMovementTracker : MonoBehaviour
         distanceMovedForXP += Vector2.Distance(prevPosition, transform.position);
         distanceMovedForEnergy += Vector2.Distance(prevPosition, transform.position);
         if (distanceMovedForXP >= config.DistanceMovedPerXP) {
-            distanceMovedForXP = 0;
+            distanceMovedForXP -= config.DistanceMovedPerXP;
             PlayerResources.main.Gain(PlayerResourceType.AthleticsSkill, 1);
         }
-        if (distanceMovedForEnergy >= 1) {
-            distanceMovedForEnergy = 0;
-            PlayerResources.main.SpendEnergy(config.EnergySpentByUnitWalked);
+        var distancePerEnergy = PlayerResources.main.GetDistanceTraveledPerEnergy();
+        if (distanceMovedForEnergy >= distancePerEnergy) {
+            distanceMovedForEnergy -= distancePerEnergy;
+            PlayerResources.main.SpendEnergy(1);
         }
         prevPosition = transform.position;
     }

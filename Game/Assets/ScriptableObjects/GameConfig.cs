@@ -15,17 +15,22 @@ public class GameConfig : ScriptableObject
     public float DistanceMovedPerXP { get { return distanceMovedPerXp; } }
 
     [SerializeField]
-    private int energySpentByUnitWalked = 1;
-    public int EnergySpentByUnitWalked { get { return energySpentByUnitWalked; } }
-
+    private float baseDistanceWalkedPerEnergy = 1;
+    public float BaseDistanceWalkedPerEnergy { get { return baseDistanceWalkedPerEnergy; } }
+    
     [SerializeField]
-    private int strengthXPPerHit = 1;
-    public int StrengthXPPerHit { get { return strengthXPPerHit; } }
-    [SerializeField]
-    private int energySpentByHit = 5;
-    public int EnergySpentByHit { get { return energySpentByHit; } }
+    private int baseEnergySpentByHit = 5;
+    public int BaseEnergySpentByHit { get { return baseEnergySpentByHit; } }
 
     [SerializeField]
     private Gradient xpBarGradient;
     public Gradient XPBarGradient { get { return xpBarGradient; } }
+
+    [SerializeField]
+    private float[] moveSpeeds;
+    public float[] MoveSpeeds { get { return moveSpeeds; } }
+
+    [SerializeField]
+    private float[] bootsEfficiency;
+    public float[] BootsEfficiency { get { return bootsEfficiency; } }
 }
