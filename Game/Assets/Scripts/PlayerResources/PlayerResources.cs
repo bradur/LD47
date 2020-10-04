@@ -51,10 +51,10 @@ public class PlayerResources : MonoBehaviour
 
     public void Gain(PlayerResourceType resourceType, int amount)
     {
-        config.Resources
-            .Find(resource => resource.Type == resourceType)
-            .Gain(amount);
+        PlayerResource resource = config.Resources.Find(r => r.Type == resourceType);
+        resource.Gain(amount);
         HUDManager.main.Refresh();
+        UIManager.main.ShowBillboardText(amount + "xp", Tools.GetPlayerPosition(), resource.Icon, resource.Color);
     }
 
     public bool SpendEnergy(int amount)

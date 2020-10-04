@@ -37,4 +37,8 @@ public class Tools
             break;
         }
     }
+
+    public static Vector3 GetPlayerPosition() {
+        return GameObject.FindGameObjectWithTag("Player").transform.position;
+    }
 }
