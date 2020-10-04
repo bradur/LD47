@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HUDResourceBar : MonoBehaviour
 {
     private Text txtValue;
+    private Text txtXPBubbleValue;
     private Image imgIcon;
     private Image imgBarFill;
     private Image imgBorder;
@@ -19,6 +20,12 @@ public class HUDResourceBar : MonoBehaviour
     private Text txtLevel;
     private GameObject levelContainer;
     private GameObject iconContainer;
+    private GameObject barContainer;
+    private GameObject xpBubbleContainer;
+    public GameObject BarContainer { get { return barContainer; } }
+    public GameObject IconContainer { get { return iconContainer; } }
+    public GameObject LevelContainer { get { return levelContainer; } }
+    public GameObject XPContainer { get { return xpBubbleContainer; } }
 
     public void Init(PlayerResource resource, Transform container, bool refresh = true)
     {
@@ -34,19 +41,24 @@ public class HUDResourceBar : MonoBehaviour
         imgIcon.color = resource.Color;
         levelContainer = this.FindChildObject("levelContainer").gameObject;
         iconContainer = this.FindChildObject("iconContainer").gameObject;
+        barContainer = this.FindChildObject("barContainer").gameObject;
+        xpBubbleContainer = this.FindChildObject("xpBubbleContainer").gameObject;
         if (resource.IsSkill)
         {
             levelContainer.SetActive(true);
             txtLevel = this.FindChildObject("levelTxt").GetComponent<Text>();
+            txtXPBubbleValue = this.FindChildObject("xpBubbleValue").GetComponent<Text>();
         }
         else
         {
+            xpBubbleContainer.SetActive(false);
             levelContainer.SetActive(false);
         }
 
         txtValue = this.FindChildObject("value").GetComponent<Text>();
         transform.SetParent(container, false);
-        if (resource.IsSkill) {
+        if (resource.IsSkill)
+        {
             Hide();
         }
         if (refresh)
@@ -66,19 +78,21 @@ public class HUDResourceBar : MonoBehaviour
         if (resource.IsSkill)
         {
             levelContainer.SetActive(true);
+            xpBubbleContainer.SetActive(true);
+        }
+        else
+        {
+            barContainer.SetActive(true);
         }
         iconContainer.SetActive(true);
     }
 
     public void Hide()
     {
-        imgBorder.enabled = false;
-        imgBackground.enabled = false;
-        txtValue.enabled = false;
-        imgIcon.enabled = false;
-        imgBarFill.enabled = false;
         levelContainer.SetActive(false);
         iconContainer.SetActive(false);
+        barContainer.SetActive(false);
+        xpBubbleContainer.SetActive(false);
     }
 
 
@@ -97,12 +111,13 @@ public class HUDResourceBar : MonoBehaviour
             max = resource.InitialValue;
             percentage = ((resource.Value * 1.0f) / (resource.InitialValue * 1.0f));
         }
-        UpdateView(percentage, current, max);
+        UpdateView(percentage, current, max, (resource.Level + 1).ToString());
     }
 
-    public void UpdateView(float percentage, float current, float max)
+    public void UpdateView(float percentage, float current, float max, string level)
     {
-        if (resource.IsSkill && resource.TotalXp > 0) {
+        if (resource.IsSkill && resource.TotalXp > 0)
+        {
             Show();
         }
         txtValue.text = "{0} / {1}".Format(
@@ -111,7 +126,8 @@ public class HUDResourceBar : MonoBehaviour
         );
         if (resource.IsSkill)
         {
-            txtLevel.text = (resource.Level + 1).ToString();
+            txtLevel.text = level;
+            txtXPBubbleValue.text = resource.Value.ToString() + "xp";
         }
 
         float xSize = Mathf.Clamp(percentage * rtBarOriginalSize.x, 0, 1);
