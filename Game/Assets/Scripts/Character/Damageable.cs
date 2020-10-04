@@ -86,7 +86,10 @@ public class Damageable : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        if (gameObject.tag != "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void tint(Color color, float amount)

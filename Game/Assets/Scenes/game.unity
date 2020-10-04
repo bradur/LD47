@@ -614,10 +614,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TilemapGridEast
       objectReference: {fileID: 0}
-    - target: {fileID: 4984780929101261347, guid: 75160e4e30907e2459fa1ec306806109, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4984780929101261373, guid: 75160e4e30907e2459fa1ec306806109, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -674,6 +670,10 @@ PrefabInstance:
     - target: {fileID: 4984780929101261347, guid: 02ecef939ecaa0b4d9c99a54fc0e058f, type: 3}
       propertyPath: m_Name
       value: Island
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984780929101261347, guid: 02ecef939ecaa0b4d9c99a54fc0e058f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4984780929101261373, guid: 02ecef939ecaa0b4d9c99a54fc0e058f, type: 3}
       propertyPath: m_LocalPosition.x
