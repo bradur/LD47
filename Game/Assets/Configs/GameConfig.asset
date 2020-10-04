@@ -16,7 +16,7 @@ MonoBehaviour:
   - resourceIcon: {fileID: 21300000, guid: 22207ee938b437e46a84b1bac25607ea, type: 3}
     resourceColor: {r: 1, g: 0.8307333, b: 0, a: 1}
     resourceType: 1
-    initialValue: 100
+    initialValue: 10000
     isSkill: 0
     xpPerLevel: 10
   - resourceIcon: {fileID: 21300000, guid: 109b5ed61ff02a247a2a822cce6508e5, type: 3}
