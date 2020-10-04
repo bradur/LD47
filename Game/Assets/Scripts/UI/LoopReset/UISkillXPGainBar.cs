@@ -54,18 +54,9 @@ public class UISkillXPGainBar : HUDResourceBar
             currentLevelXpBound = currentTarget;
             xpsPerLevel.RemoveAt(0);
         } else {
+            currentLevelXpBound = Resource.XpPerLevel;
             currentTarget = xpGained;
-            xpGained = 0;
         }
-        /*if (xpGained > Resource.XpPerLevel)
-        {
-            currentTarget = xpsPerLevel;
-            xpGained -= Resource.XpPerLevel;
-        }
-        else
-        {
-            currentTarget = xpGained;
-        }*/
     }
 
     public void Skip()
@@ -102,9 +93,9 @@ public class UISkillXPGainBar : HUDResourceBar
     {
         runningValue = 0;
         currentLevel += 1;
-        UpdateView(0, runningValue, currentLevelXpBound, (currentLevel + 1).ToString());
         XPContainer.SetActive(false);
         SetCurrentTarget();
+        UpdateView(0, runningValue, currentLevelXpBound, (currentLevel + 1).ToString());
         StartCoroutine("GainXP");
     }
 
