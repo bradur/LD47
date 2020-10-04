@@ -46,6 +46,9 @@ TagManager:
   - name: Terrain
     uniqueID: 194585605
     locked: 0
+  - name: Decal
+    uniqueID: 2738265655
+    locked: 0
   - name: Ground
     uniqueID: 16575299
     locked: 0
