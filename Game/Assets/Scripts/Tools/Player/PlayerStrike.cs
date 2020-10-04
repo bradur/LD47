@@ -36,7 +36,7 @@ public class PlayerStrike : MonoBehaviour
 
         var weapon = inventory.PlayerItems.FindAll(x => x.Slot == InventorySlot.WEAPON)
             .OrderByDescending(x => x.ItemLevel)
-            .First();
+            .FirstOrDefault();
         if (weapon != null)
         {
             EnableWeapon(weapon);
