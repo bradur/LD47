@@ -13,13 +13,25 @@ public class UISkillXPGainBar : HUDResourceBar
     private ReadyCallback xpReadyCallback;
     private int levelsGained = 0;
     private int levelsAtStart = 0;
+    private List<int> xpsPerLevel;
+
     public void AnimateXpGain(ReadyCallback readyCallback)
     {
         xpReadyCallback = readyCallback;
         updateSpeed = Configs.main.UI.XpBarUpdateSpeed;
         xpGained = Resource.Value;
         levelsAtStart = Resource.Level;
-        levelsGained = xpGained / Resource.XpPerLevel;
+
+        levelsGained = 0;
+        xpsPerLevel = new List<int>();
+        while (xpGained >= Resource.XpPerLevel)
+        {
+            levelsGained++;
+            xpGained -= Resource.XpPerLevel;
+            xpsPerLevel.Add(Resource.XpPerLevel);
+            Resource.Level++;
+        }
+
         SetCurrentTarget();
         StartCoroutine("GainXP");
     }
@@ -41,7 +53,7 @@ public class UISkillXPGainBar : HUDResourceBar
     {
         StopAllCoroutines();
         Resource.Level = levelsAtStart + levelsGained;
-        Resource.Value = Resource.TotalXp % Resource.XpPerLevel;
+        Resource.Value = xpGained;
         Refresh();
     }
 

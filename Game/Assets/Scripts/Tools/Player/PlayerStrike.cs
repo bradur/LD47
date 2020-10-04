@@ -35,9 +35,7 @@ public class PlayerStrike : MonoBehaviour, AnimationListener
             charAnim.Strike();
         }
 
-        var weapon = inventory.PlayerItems.FindAll(x => x.Slot == InventorySlot.WEAPON)
-            .OrderByDescending(x => x.ItemLevel)
-            .FirstOrDefault();
+        var weapon = inventory.GetWeapon();
         if (weapon != null)
         {
             EnableWeapon(weapon);
@@ -55,16 +53,21 @@ public class PlayerStrike : MonoBehaviour, AnimationListener
         switch (weapon.ItemLevel)
         {
             case 0:
-                Club.SetActive(true);
+                Club.SetActive(false);
                 Sword.SetActive(false);
                 PickAxe.SetActive(false);
                 break;
             case 1:
+                Club.SetActive(true);
+                Sword.SetActive(false);
+                PickAxe.SetActive(false);
+                break;
+            case 2:
                 Club.SetActive(false);
                 Sword.SetActive(true);
                 PickAxe.SetActive(false);
                 break;
-            case 2:
+            case 3:
                 Club.SetActive(false);
                 Sword.SetActive(false);
                 PickAxe.SetActive(true);

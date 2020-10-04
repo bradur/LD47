@@ -16,23 +16,23 @@ MonoBehaviour:
   - resourceIcon: {fileID: 21300000, guid: 22207ee938b437e46a84b1bac25607ea, type: 3}
     resourceColor: {r: 1, g: 0.8307333, b: 0, a: 1}
     resourceType: 1
-    initialValue: 10000
+    initialValue: 100
     isSkill: 0
-    xpPerLevel: 10
+    baseXpPerLevel: 10
   - resourceIcon: {fileID: 21300000, guid: 109b5ed61ff02a247a2a822cce6508e5, type: 3}
     resourceColor: {r: 0, g: 0.6912031, b: 1, a: 1}
     resourceType: 3
     initialValue: 0
     isSkill: 1
-    xpPerLevel: 10
+    baseXpPerLevel: 10
   - resourceIcon: {fileID: 21300000, guid: dde3573b1c1f3f4469bb53b790774141, type: 3}
     resourceColor: {r: 1, g: 0, b: 0.2696724, a: 1}
     resourceType: 4
     initialValue: 0
     isSkill: 1
-    xpPerLevel: 10
+    baseXpPerLevel: 10
   distanceMovedPerXp: 2
-  energySpentByUnitWalked: 2
+  baseDistanceWalkedPerEnergy: 0.9
   strengthXPPerHit: 1
   energySpentByHit: 5
   xpBarGradient:
@@ -64,3 +64,13 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  moveSpeeds:
+  - 4
+  - 5
+  - 8
+  - 10
+  bootsEfficiency:
+  - 1
+  - 1.5
+  - 2
+  - 3

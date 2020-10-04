@@ -7,6 +7,7 @@ public class PlayerResources : MonoBehaviour
 {
     public static PlayerResources main;
     private GameConfig config;
+    PlayerInventory inventory;
 
     void Awake()
     {
@@ -28,6 +29,7 @@ public class PlayerResources : MonoBehaviour
     {
         Reset();
         HUDManager.main.Refresh();
+        inventory = Configs.main.PlayerInventory;
     }
 
     void FixedUpdate()
@@ -76,6 +78,38 @@ public class PlayerResources : MonoBehaviour
         return success;
     }
 
+    public float GetDistanceTraveledPerEnergy()
+    {
+        var efficiency = getBootsEfficiency(inventory.GetBoots()) * getWalkingSkillEfficiency();
+        return efficiency * config.BaseDistanceWalkedPerEnergy;
+    }
+
+    public float GetMoveSpeed()
+    {
+        InventoryItem boots = inventory.GetBoots();
+        var moveSpeedIndex = boots == null ? 0 : boots.ItemLevel + 1;
+        return config.MoveSpeeds[moveSpeedIndex];
+    }
+
+    private float getBootsEfficiency(InventoryItem item)
+    {
+        // 0 = no boots, 1 = slippers (itemlevel = 0) etc.
+        InventoryItem boots = inventory.GetBoots();
+        var index = boots == null ? 0 : boots.ItemLevel + 1;
+
+        return config.BootsEfficiency[index];
+    }
+
+    private float getWalkingSkillEfficiency()
+    {
+        var skillLevel = config.Resources
+            .Find(resource => resource.Type == PlayerResourceType.AthleticsSkill)
+            .Level;
+
+        return 1.0f + skillLevel * 0.1f;
+    }
+
+
 }
 
 [System.Serializable]
@@ -108,8 +142,12 @@ public class PlayerResource
     public int TotalXp { get { return totalXp; } set { totalXp = value; } }
 
     [SerializeField]
-    private int xpPerLevel = 10;
-    public int XpPerLevel { get { return xpPerLevel; } }
+    private int baseXpPerLevel = 10;
+    public int XpPerLevel {
+        get {
+            return baseXpPerLevel + 5 * level;
+        }
+    }
 
     private int level = 0;
     public int Level { get { return level; } set { level = value; } }
@@ -139,7 +177,6 @@ public class PlayerResource
     {
         if (isSkill)
         {
-            currentValue = totalXp % xpPerLevel;
         }
         else
         {
