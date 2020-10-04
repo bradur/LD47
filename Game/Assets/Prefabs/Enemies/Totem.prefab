@@ -244,7 +244,7 @@ MonoBehaviour:
   Health: 30
   HurtShakeX: 1
   HurtShakeY: 0
-  XpPerHit: 10
+  XpPerHitPoint: 1
 --- !u!1 &8112209252151115934
 GameObject:
   m_ObjectHideFlags: 0

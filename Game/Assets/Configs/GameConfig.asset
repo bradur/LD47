@@ -38,8 +38,8 @@ MonoBehaviour:
     isSkill: 0
     baseXpPerLevel: 10
   distanceMovedPerXp: 2
-  baseDistanceWalkedPerEnergy: 0.5
-  baseEnergySpentByHit: 20
+  baseDistanceWalkedPerEnergy: 0.6
+  baseEnergySpentByHit: 15
   xpBarGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.049433887, b: 0, a: 1}
