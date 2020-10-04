@@ -408,7 +408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8477b44f2be304145a6e0a1e45ba580d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
   moveModifier: 1
 --- !u!114 &408905225937141916
 MonoBehaviour:
@@ -515,6 +514,7 @@ MonoBehaviour:
   Health: 100
   HurtShakeX: 0
   HurtShakeY: 0
+  XpPerHit: 1
 --- !u!1001 &3929547565123645224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -719,7 +719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7960589614267275693, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
       propertyPath: WallDamage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
