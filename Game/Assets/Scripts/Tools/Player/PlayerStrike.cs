@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerStrike : MonoBehaviour, AnimationListener
+public class PlayerStrike : MonoBehaviour, AnimationListener, DamageListener
 {
     [SerializeField]
     GameObject Club;
@@ -18,6 +18,8 @@ public class PlayerStrike : MonoBehaviour, AnimationListener
 
     PlayerInventory inventory;
 
+    int targetsHit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class PlayerStrike : MonoBehaviour, AnimationListener
         inventory = Configs.main.PlayerInventory;
 
         charAnim.RegisterListener(this);
+        GetComponentInChildren<CollisionDamager>(true).RegisterListener(this);
     }
 
     // Update is called once per frame
@@ -73,6 +76,15 @@ public class PlayerStrike : MonoBehaviour, AnimationListener
 
     public void StrikeDone()
     {
-        PlayerResources.main.SpendEnergy(PlayerResources.main.GetEnergyPerStrike());
+        if (targetsHit > 0)
+        {
+            PlayerResources.main.SpendEnergy(PlayerResources.main.GetEnergyPerStrike());
+        }
+        targetsHit = 0;
+    }
+
+    public void DamageableHit(Damageable damageable)
+    {
+        targetsHit++;
     }
 }
