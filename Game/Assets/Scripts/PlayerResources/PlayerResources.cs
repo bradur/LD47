@@ -54,7 +54,7 @@ public class PlayerResources : MonoBehaviour
         PlayerResource resource = config.Resources.Find(r => r.Type == resourceType);
         resource.Gain(amount);
         HUDManager.main.Refresh();
-        UIManager.main.ShowBillboardText(amount + "xp", Tools.GetPlayerPosition(), resource.Icon, resource.Color);
+        UIManager.main.ShowBillboardText(amount + "xp", Tools.GetPlayerPositionWithOffset(), resource.Icon, resource.Color);
     }
 
     public bool SpendEnergy(int amount)

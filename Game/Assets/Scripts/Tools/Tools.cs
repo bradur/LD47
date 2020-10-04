@@ -41,4 +41,8 @@ public class Tools
     public static Vector3 GetPlayerPosition() {
         return GameObject.FindGameObjectWithTag("Player").transform.position;
     }
+
+    public static Vector3 GetPlayerPositionWithOffset() {
+        return Tools.GetPlayerPosition() + new Vector3(-0.5f, 1.5f, 0f);
+    }
 }
