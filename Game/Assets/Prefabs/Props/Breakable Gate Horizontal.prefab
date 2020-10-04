@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   HurtTint: {r: 0.3207547, g: 0.1739943, b: 0.1739943, a: 1}
-  Health: 20
+  Health: 15
   HurtShakeX: 1
   HurtShakeY: 0
   XpPerHit: 0
