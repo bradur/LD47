@@ -68,6 +68,7 @@ MonoBehaviour:
   Health: 30
   HurtShakeX: 1
   HurtShakeY: 0
+  XpPerHit: 5
 --- !u!50 &7109392626620950488
 Rigidbody2D:
   serializedVersion: 4

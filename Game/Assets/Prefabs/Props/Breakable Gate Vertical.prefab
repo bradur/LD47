@@ -132,6 +132,7 @@ MonoBehaviour:
   Health: 20
   HurtShakeX: 1
   HurtShakeY: 0
+  XpPerHit: 0
 --- !u!61 &175176288475229925
 BoxCollider2D:
   m_ObjectHideFlags: 0
