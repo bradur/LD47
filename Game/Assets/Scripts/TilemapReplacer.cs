@@ -52,7 +52,7 @@ public class TilemapReplacer : MonoBehaviour
         if (item != null) {
             PlayerInventory invConf = Configs.main.PlayerInventory;
             if (invConf.PlayerItems.Any(x => x.Type == item.GetItemType())) {
-                Debug.Log("Removed item");
+                map.SetTile(tilePos, null);
                 return;
             }
         }
