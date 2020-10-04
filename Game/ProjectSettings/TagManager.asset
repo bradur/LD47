@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ReplaceableMap
   - LoopManager
+  - Tent
+  - Gate
   layers:
   - Default
   - TransparentFX

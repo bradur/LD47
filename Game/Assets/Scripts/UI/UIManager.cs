@@ -28,9 +28,9 @@ public class UIManager : MonoBehaviour
         readyCallback();
     }
 
-    public void ShowBillboardText(string text, Vector3 worldPosition, Sprite icon=null, Color color=default(Color)) {
+    public void ShowBillboardText(string text, Vector3 worldPosition, Sprite icon=null, Color color=default(Color), bool isDialog=false) {
         BillboardText bbText = Prefabs.Instantiate<BillboardText>();
-        bbText.Initialize(text, worldPosition, worldSpaceCanvas, icon, color);
+        bbText.Initialize(text, worldPosition, worldSpaceCanvas, icon, color, isDialog);
     }
 
     public void OpenResetDialog(ResetCause cause, ReadyCallback callback)
