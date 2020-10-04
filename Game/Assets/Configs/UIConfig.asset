@@ -18,44 +18,9 @@ MonoBehaviour:
   textStayDuration: 1
   xpBarUpdateSpeed: 5
   energyLossResetText:
-  - '~
-
-    After a long day you''ve become very tired.
-
-    As you try to move a
-    muscle you notice have become frozen in place.
-
-    A gust of wind appears, but
-    you don''t feel it on your skin.
-
-    You feel it from within your mind.
-
-    Suddenly,
-    you feel as if you''re being pulled back. Back to the start...
-
-    ...'
-  - 'Tired?
-
-    Learn to play plz.'
+  - You suddenly feel very tired. You feel as if you're being pulled back to the
+    start...
+  - You can't go on. You lay down to sleep and drift to sleep...
   deathResetText:
-  - '!
-
-    After that final blow you feel the very essence of your life leaving
-    your body.
-
-    You find yourself in a dark tunnel with a bright light at the
-    end.
-
-    You start to drift towards the light.
-
-    As you get closer and closer
-    to the light, it all starts to feel familiar to you.
-
-    Surely you''ve been
-    here before...
-
-    ...'
-  - 'You died lol.
-
-
-    Get rekt!'
+  - Is this the end? Or just a new beginning?
+  - You died lol. Get rekt!

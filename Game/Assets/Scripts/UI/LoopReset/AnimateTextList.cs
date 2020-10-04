@@ -57,7 +57,7 @@ public class AnimateTextList : MonoBehaviour
         }
         else if (cause == ResetCause.EnergyLoss)
         {
-            text = config.EnergyLossRestText[Random.Range(0, config.EnergyLossRestText.Count - 1)];
+            text = config.EnergyLossRestText[Random.Range(0, config.EnergyLossRestText.Count)];
         }
         return text;
     }

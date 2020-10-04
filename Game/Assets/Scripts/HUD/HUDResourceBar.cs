@@ -18,8 +18,9 @@ public class HUDResourceBar : MonoBehaviour
 
     private Text txtLevel;
     private GameObject levelContainer;
+    private GameObject iconContainer;
 
-    public void Init(PlayerResource resource, Transform container, bool refresh=true)
+    public void Init(PlayerResource resource, Transform container, bool refresh = true)
     {
         gradient = Configs.main.Game.XPBarGradient;
         this.resource = resource;
@@ -32,34 +33,52 @@ public class HUDResourceBar : MonoBehaviour
         imgIcon.sprite = resource.Icon;
         imgIcon.color = resource.Color;
         levelContainer = this.FindChildObject("levelContainer").gameObject;
-        if (resource.IsSkill) {
+        iconContainer = this.FindChildObject("iconContainer").gameObject;
+        if (resource.IsSkill)
+        {
             levelContainer.SetActive(true);
             txtLevel = this.FindChildObject("levelTxt").GetComponent<Text>();
-        } else {
+        }
+        else
+        {
             levelContainer.SetActive(false);
         }
 
         txtValue = this.FindChildObject("value").GetComponent<Text>();
         transform.SetParent(container, false);
-        if (refresh) {
+        if (resource.IsSkill) {
+            Hide();
+        }
+        if (refresh)
+        {
             Refresh();
         }
+
     }
 
-    public void Show() {
+    public void Show()
+    {
         imgBorder.enabled = true;
         imgBackground.enabled = true;
         txtValue.enabled = true;
         imgIcon.enabled = true;
         imgBarFill.enabled = true;
+        if (resource.IsSkill)
+        {
+            levelContainer.SetActive(true);
+        }
+        iconContainer.SetActive(true);
     }
 
-    public void Hide() {
+    public void Hide()
+    {
         imgBorder.enabled = false;
         imgBackground.enabled = false;
         txtValue.enabled = false;
         imgIcon.enabled = false;
         imgBarFill.enabled = false;
+        levelContainer.SetActive(false);
+        iconContainer.SetActive(false);
     }
 
 
@@ -83,11 +102,15 @@ public class HUDResourceBar : MonoBehaviour
 
     public void UpdateView(float percentage, float current, float max)
     {
+        if (resource.IsSkill && resource.TotalXp > 0) {
+            Show();
+        }
         txtValue.text = "{0} / {1}".Format(
             current,
             max
         );
-        if (resource.IsSkill){
+        if (resource.IsSkill)
+        {
             txtLevel.text = (resource.Level + 1).ToString();
         }
 

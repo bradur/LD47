@@ -20,6 +20,8 @@ public class UILoopResetDialog : MonoBehaviour
     private GameObject skillDisplay;
     private Animator animator;
 
+    private List<UISkillXPGainBar> xpSkillGainBars = new List<UISkillXPGainBar>();
+
     void Start() {
         Time.timeScale = 0f;
         animator = GetComponent<Animator>();
@@ -31,7 +33,6 @@ public class UILoopResetDialog : MonoBehaviour
         animateTextList = this.FindChildObject("animateTextList").GetComponent<AnimateTextList>();
         skillDisplay = this.FindChildObject("SkillDisplay").gameObject;
         txtPressAnyKeyToContinue = this.FindChildObject("txtPressAnyKeyToContinue").GetComponent<Text>();
-        txtPressAnyKeyToContinue.text = "- Press {0} to continue -".Format(config.SkipKey);
         txtPressAnyKeyToContinue.enabled = false;
         skillDisplay.SetActive(false);
         container.SetActive(false);
@@ -43,27 +44,38 @@ public class UILoopResetDialog : MonoBehaviour
 
     private bool isResetting = false;
     private bool waitForKey = false;
+    private bool waitForSkillSkipKey = false;
     private ResetCause cause;
 
     public void DisplayGainedXp() {
         skillDisplay.SetActive(true);
         xpBarsToUpdate = gameConfig.Resources.FindAll(resource => resource.IsSkill).Count;
         xpBarsUpdated = 0;
+        waitForSkillSkipKey = true;
+        txtPressAnyKeyToContinue.enabled = true;
+        txtPressAnyKeyToContinue.text = "- Press {0} to skip -".Format(config.SkipKey);
         foreach(PlayerResource resource in gameConfig.Resources) {
             if (resource.IsSkill) {
                 UISkillXPGainBar uiSkillXpGainBar = Prefabs.Instantiate<UISkillXPGainBar>();
                 uiSkillXpGainBar.Init(resource, uiSkillXpGainBarContainer, false);
                 uiSkillXpGainBar.AnimateXpGain(XpGainAnimateReady);
+                xpSkillGainBars.Add(uiSkillXpGainBar);
             }
         }
     }
 
     public void XpGainAnimateReady() {
-        xpBarsUpdated += 1;
-        if (xpBarsUpdated >= xpBarsToUpdate) {
-            txtPressAnyKeyToContinue.enabled = true;
-            waitForKey = true;
+        if (waitForSkillSkipKey) {
+            xpBarsUpdated += 1;
+            if (xpBarsUpdated >= xpBarsToUpdate) {
+                WaitForExit();
+            }
         }
+    }
+
+    private void WaitForExit() {
+        txtPressAnyKeyToContinue.text = "- Press {0} to continue -".Format(config.SkipKey);
+        waitForKey = true;
     }
 
     public void AfterTextList() {
@@ -102,6 +114,12 @@ public class UILoopResetDialog : MonoBehaviour
             txtPressAnyKeyToContinue.enabled = false;
             waitForKey = false;
             animator.SetTrigger("Close");
+        }
+        if (!waitForKey && waitForSkillSkipKey && Input.GetKeyDown(config.SkipKey)) {
+            foreach(UISkillXPGainBar xpBar in xpSkillGainBars) {
+                xpBar.Skip();
+            }
+            WaitForExit();
         }
     }
 }

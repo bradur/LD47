@@ -8,44 +8,65 @@ public class UISkillXPGainBar : HUDResourceBar
 
     private float runningValue = 0;
     private float currentTarget = 0;
-    private float xpGained = 0;
+    private int xpGained = 0;
     private float updateSpeed = 1;
     private ReadyCallback xpReadyCallback;
-    public void AnimateXpGain(ReadyCallback readyCallback) {
+    private int levelsGained = 0;
+    private int levelsAtStart = 0;
+    public void AnimateXpGain(ReadyCallback readyCallback)
+    {
         xpReadyCallback = readyCallback;
         updateSpeed = Configs.main.UI.XpBarUpdateSpeed;
         xpGained = Resource.Value;
+        levelsAtStart = Resource.Level;
+        levelsGained = xpGained / Resource.XpPerLevel;
         SetCurrentTarget();
         StartCoroutine("GainXP");
     }
 
-    public void SetCurrentTarget() {
-        if (xpGained > Resource.XpPerLevel) {
+    public void SetCurrentTarget()
+    {
+        if (xpGained > Resource.XpPerLevel)
+        {
             currentTarget = Resource.XpPerLevel;
             xpGained -= Resource.XpPerLevel;
-        } else {
+        }
+        else
+        {
             currentTarget = xpGained;
         }
-        
+    }
+
+    public void Skip()
+    {
+        StopAllCoroutines();
+        Resource.Level = levelsAtStart + levelsGained;
+        Resource.Value = Resource.TotalXp % Resource.XpPerLevel;
+        Refresh();
     }
 
     private IEnumerator GainXP()
     {
-        while (runningValue < currentTarget) {
+        while (runningValue < currentTarget)
+        {
             runningValue += 1;
             float percentage = (runningValue / (Resource.XpPerLevel * 1.0f));
             UpdateView(percentage, runningValue, Resource.XpPerLevel);
             yield return StartCoroutine(Tools.WaitForRealTime(1.0f / updateSpeed));
         }
-        if (runningValue >= Resource.XpPerLevel) {
+        if (runningValue >= Resource.XpPerLevel)
+        {
             GainLevel();
-        } else {
+        }
+        else
+        {
             xpReadyCallback();
         }
     }
 
 
-    private void GainLevel() {
+    private void GainLevel()
+    {
         runningValue = 0;
         Resource.Level += 1;
         SetCurrentTarget();

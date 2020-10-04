@@ -130,13 +130,16 @@ public class PlayerResource
     public void Gain(int amount)
     {
         currentValue += amount;
+        if (isSkill) {
+            totalXp += amount;
+        }
     }
 
     public void Reset()
     {
         if (isSkill)
         {
-
+            currentValue = totalXp % xpPerLevel;
         }
         else
         {
