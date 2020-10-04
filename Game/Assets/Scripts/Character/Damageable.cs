@@ -19,6 +19,9 @@ public class Damageable : MonoBehaviour
     [SerializeField]
     float HurtShakeY = 0.0f;
 
+    [SerializeField]
+    public int XpPerHit = 1;
+
     SpriteRenderer[] renderers;
     Color[] originalColors;
 

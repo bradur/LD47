@@ -78,6 +78,6 @@ public class PlayerStrike : MonoBehaviour, AnimationListener
 
     public void StrikeDone()
     {
-        PlayerResources.main.Spend(PlayerResourceType.Energy, Configs.main.Game.EnergySpentByHit);
+        PlayerResources.main.Spend(PlayerResourceType.Energy, PlayerResources.main.GetEnergyPerStrike());
     }
 }

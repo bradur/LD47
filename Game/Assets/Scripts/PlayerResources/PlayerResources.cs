@@ -91,6 +91,14 @@ public class PlayerResources : MonoBehaviour
         return config.MoveSpeeds[moveSpeedIndex];
     }
 
+    public int GetEnergyPerStrike()
+    {
+        var skillLevel = config.Resources
+            .Find(resource => resource.Type == PlayerResourceType.StrengthSkill)
+            .Level;
+        return Mathf.CeilToInt(config.BaseEnergySpentByHit / (1.0f + 0.5f * skillLevel));
+    }
+
     private float getBootsEfficiency(InventoryItem item)
     {
         // 0 = no boots, 1 = slippers (itemlevel = 0) etc.
