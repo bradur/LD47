@@ -24,7 +24,7 @@ public class CollisionDamager : MonoBehaviour
         {
             var damage = damageable.type == DamageableType.WALL ? WallDamage : Damage;
             damageable.Hurt(damage);
-            if (damageable.tag == "Player") {
+            if (damageable.tag == "Player" && damageable.isActiveAndEnabled) {
                 PlayerResources.main.Spend(PlayerResourceType.Health, (int)Damage);
             } else {
                 if (damageable.XpPerHitPoint > 0)

@@ -27,6 +27,8 @@ public class Damageable : MonoBehaviour
     [SerializeField]
     public int XpOnDie = 0;
 
+    public bool DontDestroyOnDie = false;
+
     SpriteRenderer[] renderers;
     Color[] originalColors;
 
@@ -101,7 +103,14 @@ public class Damageable : MonoBehaviour
             {
                 PlayerResources.main.Gain(PlayerResourceType.StrengthSkill, XpOnDie);
             }
-            Destroy(gameObject);
+            if (!DontDestroyOnDie)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                enabled = false;
+            }
         }
     }
 

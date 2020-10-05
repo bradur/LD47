@@ -23,7 +23,8 @@ public class DamagedSprite : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var newDestructionlevel = (int)((sprites.Length - 1) * (1.0f - damageable.Health / damageable.MaxHealth));
+        var healthPercentage = Mathf.Clamp(damageable.Health / damageable.MaxHealth, 0f, 1f);
+        var newDestructionlevel = (int)((sprites.Length - 1) * (1.0f - healthPercentage));
         if (newDestructionlevel > destructionLevel)
         {
             destructionLevel = newDestructionlevel;

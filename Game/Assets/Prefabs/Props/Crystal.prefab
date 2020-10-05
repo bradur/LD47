@@ -136,6 +136,7 @@ MonoBehaviour:
   HurtShakeY: 0
   XpPerHitPoint: 0
   XpOnDie: 0
+  DontDestroyOnDie: 1
 --- !u!58 &-773581434217666158
 CircleCollider2D:
   m_ObjectHideFlags: 0

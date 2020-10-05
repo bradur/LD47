@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 6739e9e5c809525479bf47fabac16929, type: 3}
     - target: {fileID: 1543838364870327889, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
       propertyPath: Health
-      value: 1500
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 1543838364870327889, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
       propertyPath: XpPerHitPoint
@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1543838364870327889, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
       propertyPath: XpOnDie
-      value: 50
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1901621976867875923, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
       propertyPath: m_LocalPosition.x
@@ -97,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 20fcb0c31fd6f1b47b285d46c1a5ecbd, type: 3}
     - target: {fileID: 6205736164872276493, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
       propertyPath: AnimationSpeed
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
@@ -113,6 +113,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6528090956315406441}
     m_Modifications:
+    - target: {fileID: 1030513769567267971, guid: 330cde39565dc7b46b033f1e140af00b, type: 3}
+      propertyPath: Damage
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3080953139478515900, guid: 330cde39565dc7b46b033f1e140af00b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.895
