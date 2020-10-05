@@ -11,7 +11,8 @@ public class Damageable : MonoBehaviour
     Color HurtTint = Color.red;
 
     [SerializeField]
-    float Health = 30.0f;
+    public float Health = 30.0f;
+    public float MaxHealth;
 
     [SerializeField]
     float HurtShakeX = 1.0f;
@@ -44,6 +45,7 @@ public class Damageable : MonoBehaviour
         {
             originalColors[i] = renderers[i].color;
         }
+        MaxHealth = Health;
     }
 
     // Update is called once per frame
