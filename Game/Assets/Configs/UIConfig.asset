@@ -15,7 +15,7 @@ MonoBehaviour:
   skipKey: 32
   textFadeInDuration: 1
   textFadeOutDuration: 1
-  textStayDuration: 1
+  textStayDuration: 5
   xpBarUpdateSpeed: 5
   energyLossResetText:
   - You feel very tired. You close your eyes and feel yourself being pulled back...
@@ -58,7 +58,7 @@ MonoBehaviour:
     itemType: 5
   - comment: I feel like I'm flying!
     itemType: 6
-  playerCommentMaxDistance: 2.5
+  playerCommentMaxDistance: 3.5
   startStory:
   - You went camping in the Tranquil Grove.
   - After setting up your tent, you decide to take a look around.
