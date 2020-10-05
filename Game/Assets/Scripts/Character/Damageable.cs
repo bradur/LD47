@@ -93,6 +93,7 @@ public class Damageable : MonoBehaviour
             positionsReset = false;
         }
 
+        SoundManager.main.PlaySound(SoundType.Whack);
         Health -= damage;
         if (Health > 0)
         {

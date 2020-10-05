@@ -48,7 +48,6 @@ public class CharacterAnimator : MonoBehaviour
             if (!Striking)
             {
                 Striking = true;
-                SoundManager.main.PlaySound(SoundType.Swish);
                 StrikingRequested = false;
             }
         }
@@ -81,5 +80,10 @@ public class CharacterAnimator : MonoBehaviour
         {
             listener.StrikeDone();
         }
+    }
+
+    public void SwingStarted()
+    {
+        SoundManager.main.PlaySound(SoundType.Swish);
     }
 }
