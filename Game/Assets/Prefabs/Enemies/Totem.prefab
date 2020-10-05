@@ -250,6 +250,7 @@ MonoBehaviour:
   XpOnDie: 15
   DontDestroyOnDie: 0
   IsWinCondition: 0
+  DestroyEffect: {fileID: 6091295622412393331, guid: 53377903af9b8dc488b345bd1416a351, type: 3}
 --- !u!1 &8112209252151115934
 GameObject:
   m_ObjectHideFlags: 0
