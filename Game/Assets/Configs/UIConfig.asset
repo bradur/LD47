@@ -34,7 +34,7 @@ MonoBehaviour:
     comment: Need a weapon to whack this with!
     condition: 1
   - tag: BreakableWall
-    comment: Need something sharp against this.
+    comment: Need something extra sharp against this
     condition: 2
   - tag: TotemOne
     comment: Ouch! I better have a weapon against those!
@@ -45,6 +45,12 @@ MonoBehaviour:
   - tag: StoneTotem
     comment: Looks like it's made of stone!
     condition: 2
+  - tag: BreakableLog
+    comment: Can't break this with my bare hands
+    condition: 1
+  - tag: BreakableLog
+    comment: I need something sharp against this
+    condition: 3
   itemComments:
   - comment: I'm gonna have fun with this!
     itemType: 1

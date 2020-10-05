@@ -79,7 +79,6 @@ public class UISkillXPGainBar : HUDResourceBar
         }
         if (runningValue >= currentLevelXpBound)
         {
-            Debug.Log("{0} -> {1}".Format(runningValue, currentLevelXpBound));
             GainLevel();
         }
         else
