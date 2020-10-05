@@ -40,6 +40,12 @@ public class UILoopResetDialog : MonoBehaviour
     public void PlayStartAnimation(bool gameStart){
         Time.timeScale = 0;
         container.SetActive(true);
+
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+        }
+
         animator.enabled = true;
         animator.SetTrigger("Open");
         animator.SetBool("GameStart", gameStart);
