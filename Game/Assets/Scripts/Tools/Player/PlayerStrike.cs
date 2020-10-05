@@ -27,7 +27,10 @@ public class PlayerStrike : MonoBehaviour, AnimationListener, DamageListener
         inventory = Configs.main.PlayerInventory;
 
         charAnim.RegisterListener(this);
-        GetComponentInChildren<CollisionDamager>(true).RegisterListener(this);
+        foreach (var damager in GetComponentsInChildren<CollisionDamager>(true))
+        {
+            damager.RegisterListener(this);
+        }
     }
 
     // Update is called once per frame
@@ -76,6 +79,7 @@ public class PlayerStrike : MonoBehaviour, AnimationListener, DamageListener
 
     public void StrikeDone()
     {
+        Debug.Log(targetsHit);
         if (targetsHit > 0)
         {
             PlayerResources.main.SpendEnergy(PlayerResources.main.GetEnergyPerStrike());
@@ -85,6 +89,7 @@ public class PlayerStrike : MonoBehaviour, AnimationListener, DamageListener
 
     public void DamageableHit(Damageable damageable)
     {
+        Debug.Log("HIT");
         targetsHit++;
     }
 }
