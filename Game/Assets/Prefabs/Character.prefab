@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb72a59403955f41ad5313ca02dc829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SortingOrderOrigin: {fileID: 408905224235098488}
 --- !u!1 &408905225617209877
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb72a59403955f41ad5313ca02dc829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SortingOrderOrigin: {fileID: 0}
 --- !u!1 &408905225839970357
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb72a59403955f41ad5313ca02dc829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SortingOrderOrigin: {fileID: 0}
 --- !u!1 &408905225937141917
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +524,7 @@ MonoBehaviour:
   XpOnDie: 0
   DontDestroyOnDie: 0
   IsWinCondition: 0
+  DestroyEffect: {fileID: 0}
 --- !u!114 &2773209015201126135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,6 +544,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1505911888146787384}
     m_Modifications:
+    - target: {fileID: 1221805338371599167, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
+      propertyPath: SortingOrderOrigin
+      value: 
+      objectReference: {fileID: 408905224235098488}
     - target: {fileID: 4203490593847316217, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -631,6 +639,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1505911888146787384}
     m_Modifications:
+    - target: {fileID: 1221805338371599167, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
+      propertyPath: SortingOrderOrigin
+      value: 
+      objectReference: {fileID: 408905224235098488}
     - target: {fileID: 4203490593847316217, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -766,6 +778,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1505911888146787384}
     m_Modifications:
+    - target: {fileID: 1221805338371599167, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
+      propertyPath: SortingOrderOrigin
+      value: 
+      objectReference: {fileID: 408905224235098488}
     - target: {fileID: 4203490593847316217, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
       propertyPath: m_IsActive
       value: 0

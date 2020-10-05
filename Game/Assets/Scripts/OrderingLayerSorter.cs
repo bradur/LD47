@@ -8,6 +8,9 @@ public class OrderingLayerSorter : MonoBehaviour
 
     int originalOrder;
 
+    [SerializeField]
+    GameObject SortingOrderOrigin;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +19,9 @@ public class OrderingLayerSorter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        rend.sortingOrder = originalOrder * 100 + (int)(-transform.position.y * 100);
+        var sortinOrderOrigin = SortingOrderOrigin == null ? transform : SortingOrderOrigin.transform;
+        rend.sortingOrder = originalOrder + (int)(-sortinOrderOrigin.position.y * 100);
     }
 }
