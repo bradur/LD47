@@ -69,6 +69,7 @@ MonoBehaviour:
   HurtShakeX: 1
   HurtShakeY: 0
   XpPerHitPoint: 0.5
+  XpOnDie: 0
 --- !u!50 &7109392626620950488
 Rigidbody2D:
   serializedVersion: 4
