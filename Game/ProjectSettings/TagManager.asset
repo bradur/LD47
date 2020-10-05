@@ -13,6 +13,7 @@ TagManager:
   - TotemOne
   - EvilTotem
   - StoneTotem
+  - BreakableLog
   layers:
   - Default
   - TransparentFX

@@ -36,7 +36,17 @@ public class UIManager : MonoBehaviour
     }
 
     public void PlayStartAnimation(bool gameStart) {
+        if (loopResetDialog == null) {
+            loopResetDialog = this.FindChildObject("LoopEndDialog").GetComponent<UILoopResetDialog>();
+        }
         loopResetDialog.PlayStartAnimation(gameStart);
+    }
+    
+    public void CallLoopResetDialogSceneStart() {
+        if (loopResetDialog == null) {
+            loopResetDialog = this.FindChildObject("LoopEndDialog").GetComponent<UILoopResetDialog>();
+        }
+        loopResetDialog.SceneLoaded();
     }
 
     public void ShowDialog(string text, Vector3 worldPosition) {
@@ -49,7 +59,6 @@ public class UIManager : MonoBehaviour
             titleTextContainer = this.FindChildObject("TitleTextContainer");
         }
         titleText.Initialize(text, titleTextContainer);
-        Debug.Log(titleText);
     }
 
     public void OpenResetDialog(ResetCause cause, ReadyCallback callback)

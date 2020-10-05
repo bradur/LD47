@@ -91,7 +91,6 @@ public class AnimateTextList : MonoBehaviour
         {
             isRunning = false;
             txtInfo.enabled = false;
-            Debug.Log("Texts ready!");
             readyCallback();
         }
     }

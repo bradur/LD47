@@ -51,12 +51,25 @@ public class LoopManager : MonoBehaviour
         }
     }
 
+    // called first
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+
+        UIManager.main.CallLoopResetDialogSceneStart();
+    }
+
     public void AfterDialog()
     {
-        Debug.Log("Loop #" + loopCount + " starting");
+        //Debug.Log("Loop #" + loopCount + " starting");
         string sceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-        if (loopCount > 1) {
+        if (loopCount > 1)
+        {
             UIManager.main.PlayStartAnimation(false);
         }
     }

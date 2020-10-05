@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Linq;
 using UnityEngine.UI;
 
@@ -133,11 +134,15 @@ public class UILoopResetDialog : MonoBehaviour
 
     public void StartScene() {
         Time.timeScale = 1f;
+    }
+
+    // called first
+    public void SceneLoaded() {
         if (LoopManager.main.LoopCount > 0) {
             UIManager.main.ShowTitleText("Loop {0}".Format(LoopManager.main.LoopCount));
         }
-
     }
+
 
     void Update() {
         if (waitForKey && Input.GetKeyDown(config.SkipKey)) {

@@ -85,12 +85,19 @@ public class PlayerCommentTag
         ItemType.PICKAXE
     };
 
+    private List<ItemType> axeAndPickaxe = new List<ItemType>() {
+        ItemType.SWORD,
+        ItemType.PICKAXE
+    };
+
 
     public bool ConditionChecksOut () {
         if (condition == PlayerCommentCondition.DontHaveWeapon) {
             return !Configs.main.PlayerInventory.PlayerItems.Any(item => weapons.Contains(item.Type));
         } else if (condition == PlayerCommentCondition.DontHavePickaxe) {
             return !Configs.main.PlayerInventory.PlayerItems.Any(item => item.Type == ItemType.PICKAXE);
+        } else if (condition == PlayerCommentCondition.DontHavePickaxeOrSword) {
+            return !Configs.main.PlayerInventory.PlayerItems.Any(item => axeAndPickaxe.Contains(item.Type));
         }
         return true;
     }
@@ -99,5 +106,6 @@ public class PlayerCommentTag
 public enum PlayerCommentCondition {
     None,
     DontHaveWeapon,
-    DontHavePickaxe
+    DontHavePickaxe,
+    DontHavePickaxeOrSword
 }
