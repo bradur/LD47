@@ -18,7 +18,7 @@ public class BillboardText : MonoBehaviour
     private Image imgIcon;
     private Color defaultColor = new Color(1, 1, 1, 1);
 
-    public void Initialize(string text, Vector3 pos, Transform parent, Sprite icon=null, Color color=default(Color), bool isDialog=false)
+    public void Initialize(string text, Vector3 pos, Transform parent, Sprite icon=null, Color color=default(Color), bool isDialog=false, int fontSize=-1)
     {
         txtTarget = this.FindChildObject("txtTarget").GetComponent<Text>();
         txtMessage = this.FindChildObject("txtMessage").GetComponent<Text>();
@@ -35,6 +35,13 @@ public class BillboardText : MonoBehaviour
         } else {
             txtTarget.enabled = true;
             txtMessage.enabled = false;
+        }
+        if (fontSize > 0) {
+            if (isDialog) {
+                txtMessage.fontSize = fontSize;
+            } else {
+                txtTarget.fontSize = fontSize;
+            }
         }
         rt = GetComponent<RectTransform>();
         originalRotation = transform.rotation;

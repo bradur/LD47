@@ -107,6 +107,9 @@ public class UILoopResetDialog : MonoBehaviour
 
     public void StartScene() {
         Time.timeScale = 1f;
+        if (LoopManager.main.LoopCount > 0) {
+            UIManager.main.ShowTitleText("Loop {0}".Format(LoopManager.main.LoopCount));
+        }
     }
 
     void Update() {
