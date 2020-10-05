@@ -12,6 +12,7 @@ public class Damageable : MonoBehaviour
 
     [SerializeField]
     public float Health = 30.0f;
+
     public float MaxHealth;
 
     [SerializeField]

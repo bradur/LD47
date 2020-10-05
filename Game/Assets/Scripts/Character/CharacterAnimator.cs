@@ -13,6 +13,9 @@ public class CharacterAnimator : MonoBehaviour
     [SerializeField]
     bool Striking;
 
+    [SerializeField]
+    float AnimationSpeed = 1.0f;
+
     Animator anim;
 
     private float strikeTimer;
@@ -24,6 +27,7 @@ public class CharacterAnimator : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        anim.speed = AnimationSpeed;
     }
 
     public void RegisterListener(AnimationListener listener)
