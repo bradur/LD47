@@ -74,5 +74,8 @@ public class LoopManager : MonoBehaviour
         }
     }
 
-
+    public void Win()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

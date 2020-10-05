@@ -16,7 +16,7 @@ MonoBehaviour:
   textFadeInDuration: 1
   textFadeOutDuration: 1
   textStayDuration: 5
-  xpBarUpdateSpeed: 5
+  xpBarUpdateSpeed: 0.75
   energyLossResetText:
   - You feel very tired. You close your eyes and feel yourself being pulled back...
   - You can't go on. You lay down and drift to sleep...

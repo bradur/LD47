@@ -29,6 +29,8 @@ public class Damageable : MonoBehaviour
 
     public bool DontDestroyOnDie = false;
 
+    public bool IsWinCondition = false;
+
     SpriteRenderer[] renderers;
     Color[] originalColors;
 
@@ -110,6 +112,11 @@ public class Damageable : MonoBehaviour
             else
             {
                 enabled = false;
+            }
+
+            if (IsWinCondition)
+            {
+                LoopManager.main.Win();
             }
         }
     }

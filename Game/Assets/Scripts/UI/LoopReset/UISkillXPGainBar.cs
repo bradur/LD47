@@ -75,7 +75,7 @@ public class UISkillXPGainBar : HUDResourceBar
             float percentage = (runningValue / (currentLevelXpBound * 1.0f));
             UpdateView(percentage, runningValue, currentLevelXpBound, (currentLevel + 1).ToString());
             XPContainer.SetActive(false);
-            yield return StartCoroutine(Tools.WaitForRealTime(1.0f / updateSpeed));
+            yield return StartCoroutine(Tools.WaitForRealTime(1.0f / currentLevelXpBound / updateSpeed));
         }
         if (runningValue >= currentLevelXpBound)
         {
