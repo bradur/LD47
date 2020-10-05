@@ -2,25 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EndScene : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private Text loopCounterText;
+
     void Start()
     {
-
+        LoopManager loopManager = LoopManager.main;
+        string loopCounterString = "You escaped the wicked timeloop in {0} loops.";
+        if (loopManager == null)
+        {
+            loopCounterString = loopCounterString.Format("∞");
+            loopCounterText.text = loopCounterString;
+        }
+        else
+        {
+            loopCounterString = loopCounterString.Format(loopManager.LoopCount.ToString());
+            loopCounterText.text = loopCounterString;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-            #else
+#else
             Application.Quit();
-            #endif
+#endif
         }
         else if (Input.GetKeyDown(KeyCode.R))
         {
