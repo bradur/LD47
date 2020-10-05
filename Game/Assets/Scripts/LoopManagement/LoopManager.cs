@@ -60,4 +60,9 @@ public class LoopManager : MonoBehaviour
             UIManager.main.PlayStartAnimation(false);
         }
     }
+
+    public void Win()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
