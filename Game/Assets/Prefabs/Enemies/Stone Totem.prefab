@@ -75,6 +75,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3378497981618603965, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378497981618603965, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.69
+      objectReference: {fileID: 0}
     - target: {fileID: 4417474940605774612, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
       propertyPath: AggroDistance
       value: 7

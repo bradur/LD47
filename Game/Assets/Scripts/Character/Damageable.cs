@@ -34,6 +34,9 @@ public class Damageable : MonoBehaviour
     [SerializeField]
     GameObject DestroyEffect;
 
+    [SerializeField]
+    GameObject DestroyEffectOrigin;
+
     SpriteRenderer[] renderers;
     Color[] originalColors;
 
@@ -48,6 +51,7 @@ public class Damageable : MonoBehaviour
     void Start()
     {
         renderers = GetComponentsInChildren<SpriteRenderer>();
+
         originalColors = new Color[renderers.Length];
         for (var i = 0; i < renderers.Length; i++)
         {
@@ -112,8 +116,9 @@ public class Damageable : MonoBehaviour
             {
                 if (DestroyEffect != null)
                 {
+                    var effectPos = DestroyEffectOrigin == null ? transform.position : DestroyEffectOrigin.transform.position;
                     var effect = Instantiate(DestroyEffect);
-                    effect.transform.position = transform.position;
+                    effect.transform.position = effectPos;
                 }
                 Destroy(gameObject);
             }
@@ -133,6 +138,10 @@ public class Damageable : MonoBehaviour
     {
         for (var i = 0; i < renderers.Length; i++)
         {
+            if (renderers[i].gameObject.name.Contains("Hay"))
+            {
+                continue;
+            }
             var finalColor = Color.Lerp(originalColors[i], color, amount);
             renderers[i].color = finalColor;
         }
