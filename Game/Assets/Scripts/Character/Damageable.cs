@@ -35,6 +35,9 @@ public class Damageable : MonoBehaviour
     GameObject DestroyEffect;
 
     [SerializeField]
+    GameObject HurtEffect;
+
+    [SerializeField]
     GameObject DestroyEffectOrigin;
 
     SpriteRenderer[] renderers;
@@ -91,6 +94,13 @@ public class Damageable : MonoBehaviour
         {
             hurtPosition = transform.position;
             positionsReset = false;
+        }
+
+        if (HurtEffect != null)
+        {
+            var effectPos = DestroyEffectOrigin == null ? transform.position : DestroyEffectOrigin.transform.position;
+            var effect = Instantiate(HurtEffect);
+            effect.transform.position = effectPos;
         }
 
         SoundManager.main.PlaySound(SoundType.Whack);

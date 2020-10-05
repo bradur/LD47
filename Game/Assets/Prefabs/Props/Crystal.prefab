@@ -138,6 +138,9 @@ MonoBehaviour:
   XpOnDie: 0
   DontDestroyOnDie: 1
   IsWinCondition: 1
+  DestroyEffect: {fileID: 0}
+  HurtEffect: {fileID: 6091295622412393331, guid: e3f709c43e437fa499abd346b0e98431, type: 3}
+  DestroyEffectOrigin: {fileID: 0}
 --- !u!58 &-773581434217666158
 CircleCollider2D:
   m_ObjectHideFlags: 0
