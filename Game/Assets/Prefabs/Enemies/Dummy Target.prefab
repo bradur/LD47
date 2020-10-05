@@ -66,10 +66,14 @@ MonoBehaviour:
   type: 0
   HurtTint: {r: 1, g: 0, b: 0, a: 1}
   Health: 30
+  MaxHealth: 0
   HurtShakeX: 1
   HurtShakeY: 0
   XpPerHitPoint: 0.5
   XpOnDie: 0
+  DontDestroyOnDie: 0
+  IsWinCondition: 0
+  DestroyEffect: {fileID: 6091295622412393331, guid: 53377903af9b8dc488b345bd1416a351, type: 3}
 --- !u!50 &7109392626620950488
 Rigidbody2D:
   serializedVersion: 4
@@ -162,7 +166,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 6e0cc49f135f7d949be7168b2990aac6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

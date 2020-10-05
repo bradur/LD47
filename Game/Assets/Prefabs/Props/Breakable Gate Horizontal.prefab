@@ -130,9 +130,14 @@ MonoBehaviour:
   type: 1
   HurtTint: {r: 0.3207547, g: 0.1739943, b: 0.1739943, a: 1}
   Health: 10
+  MaxHealth: 0
   HurtShakeX: 1
   HurtShakeY: 0
   XpPerHitPoint: 0
+  XpOnDie: 0
+  DontDestroyOnDie: 0
+  IsWinCondition: 0
+  DestroyEffect: {fileID: 6091295622412393331, guid: 53377903af9b8dc488b345bd1416a351, type: 3}
 --- !u!61 &175176288475229925
 BoxCollider2D:
   m_ObjectHideFlags: 0
