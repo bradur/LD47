@@ -105,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: bae010ffcd98c1143a9ada3254edc9d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -204,7 +204,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: cad46250915512a40aca255ba9fac801, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -250,6 +250,7 @@ MonoBehaviour:
   StrikingRequested: 0
   Walking: 0
   Striking: 0
+  AnimationSpeed: 1
 --- !u!114 &4230386299763395855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +334,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: bae010ffcd98c1143a9ada3254edc9d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -513,9 +514,13 @@ MonoBehaviour:
   type: 0
   HurtTint: {r: 1, g: 0, b: 0, a: 1}
   Health: 100
+  MaxHealth: 0
   HurtShakeX: 0
   HurtShakeY: 0
-  XpPerHit: 1
+  XpPerHitPoint: 0
+  XpOnDie: 0
+  DontDestroyOnDie: 0
+  IsWinCondition: 0
 --- !u!114 &2773209015201126135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,6 +548,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4d838851885302340a7e6ef0be0a9918, type: 3}
+    - target: {fileID: 4403917817322457279, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5401243450192029074, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.93200004
@@ -630,6 +639,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f43e1438d7da1f146969ef5b2ace7afa, type: 3}
+    - target: {fileID: 4403917817322457279, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5401243450192029074, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.93200004
@@ -761,6 +774,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5e57f020c03b1e042941bd7c7d77f1a0, type: 3}
+    - target: {fileID: 4403917817322457279, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5401243450192029074, guid: c66aac6603b8cd44d83cde69072f63ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.93200004

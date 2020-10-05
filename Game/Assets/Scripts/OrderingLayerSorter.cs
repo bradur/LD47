@@ -6,15 +6,18 @@ public class OrderingLayerSorter : MonoBehaviour
 {
     SpriteRenderer rend;
 
+    int originalOrder;
+
     // Start is called before the first frame update
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
+        originalOrder = rend.sortingOrder;
     }
 
     // Update is called once per frame
     void Update()
     {
-        rend.sortingOrder = (int)(-transform.position.y * 100);
+        rend.sortingOrder = originalOrder * 100 + (int)(-transform.position.y * 100);
     }
 }
