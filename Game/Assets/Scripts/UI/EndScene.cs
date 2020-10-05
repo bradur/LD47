@@ -35,13 +35,13 @@ public class EndScene : MonoBehaviour
             Application.Quit();
 #endif
         }
-        else if (Input.GetKeyDown(KeyCode.R))
+        /*else if (Input.GetKeyDown(KeyCode.R))
         {
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex - 1;
             if (SceneManager.sceneCountInBuildSettings > nextSceneIndex)
             {
                 SceneManager.LoadScene(nextSceneIndex);
             }
-        }
+        }*/
     }
 }

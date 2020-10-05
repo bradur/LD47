@@ -389,9 +389,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Press Escape to quit
-
-    Press R to restart'
+  m_Text: Press Esc to quit
 --- !u!222 &1220181466
 CanvasRenderer:
   m_ObjectHideFlags: 0
