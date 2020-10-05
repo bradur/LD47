@@ -43,6 +43,10 @@ public class Tools
     }
 
     public static Vector3 GetPlayerPositionWithOffset() {
-        return Tools.GetPlayerPosition() + new Vector3(-0.5f, 1.5f, 0f);
+        return Tools.GetPlayerPosition() + new Vector3(1f, 2f, 0f);
+    }
+
+    public static Vector3 GetPlayerPositionAboveOffset() {
+        return Tools.GetPlayerPosition() + new Vector3(0, 3f, 0f);
     }
 }

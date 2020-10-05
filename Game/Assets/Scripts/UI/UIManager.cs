@@ -35,6 +35,10 @@ public class UIManager : MonoBehaviour
         bbText.Initialize(text, worldPosition, worldSpaceCanvas, icon, color, isDialog, fontSize);
     }
 
+    public void ShowDialog(string text, Vector3 worldPosition) {
+        BillboardText bbText = Prefabs.Instantiate<BillboardText>();
+        bbText.Initialize(text, worldPosition, worldSpaceCanvas, null, Color.white, true, -1);
+    }
     public void ShowTitleText(string text) {
         TitleText titleText = Prefabs.Instantiate<TitleText>();
         titleText.Initialize(text, titleTextContainer);

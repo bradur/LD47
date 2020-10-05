@@ -32,6 +32,9 @@ public class PlayerDialog : MonoBehaviour
             if (sinceLastCheck >= checkInterval) {
                 sinceLastCheck = 0f;
                 foreach(PlayerCommentTag tagComment in playerComments) {
+                    if (!tagComment.ConditionChecksOut()) {
+                        continue;
+                    }
                     float nearest = GetNearestDistance(tagComment.Tag);
                     if (nearest < nearestDistance || nearestDistance < 0) {
                         nearestDistance = nearest;
@@ -72,4 +75,29 @@ public class PlayerCommentTag
     [SerializeField]
     private string comment;
     public string Comment { get { return comment; } }
+
+    [SerializeField]
+    private PlayerCommentCondition condition;
+
+    private List<ItemType> weapons = new List<ItemType>(){
+        ItemType.CLUB,
+        ItemType.SWORD,
+        ItemType.PICKAXE
+    };
+
+
+    public bool ConditionChecksOut () {
+        if (condition == PlayerCommentCondition.DontHaveWeapon) {
+            return !Configs.main.PlayerInventory.PlayerItems.Any(item => weapons.Contains(item.Type));
+        } else if (condition == PlayerCommentCondition.DontHavePickaxe) {
+            return !Configs.main.PlayerInventory.PlayerItems.Any(item => item.Type == ItemType.PICKAXE);
+        }
+        return true;
+    }
+}
+
+public enum PlayerCommentCondition {
+    None,
+    DontHaveWeapon,
+    DontHavePickaxe
 }

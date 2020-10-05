@@ -27,5 +27,27 @@ MonoBehaviour:
   playerComments:
   - tag: Tent
     comment: I woke up from there.
+    condition: 0
   - tag: Gate
-    comment: This needs to be broken somehow.
+    comment: Maybe I could break this with something.
+    condition: 0
+  - tag: Scarecrow
+    comment: Need a weapon to whack this with!
+    condition: 1
+  - tag: BreakableWall
+    comment: Need something sharp against this.
+    condition: 2
+  itemComments:
+  - comment: I'm gonna have fun with this!
+    itemType: 1
+  - comment: Swish! Swish!
+    itemType: 2
+  - comment: I bet I can break things with this!
+    itemType: 3
+  - comment: Ooh comfy!
+    itemType: 4
+  - comment: Fancy!
+    itemType: 5
+  - comment: I feel like I'm flying!
+    itemType: 6
+  playerCommentMaxDistance: 4

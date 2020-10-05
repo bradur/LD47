@@ -45,7 +45,6 @@ public class LoopManager : MonoBehaviour
         if (reload)
         {
             loopCount++;
-            Debug.Log(loopCount);
 
             UIManager.main.OpenResetDialog(ResetCause.EnergyLoss, AfterDialog);
         }

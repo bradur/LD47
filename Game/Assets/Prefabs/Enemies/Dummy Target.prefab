@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7109392626620950488}
   m_Layer: 0
   m_Name: Dummy Target
-  m_TagString: Untagged
+  m_TagString: Scarecrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
