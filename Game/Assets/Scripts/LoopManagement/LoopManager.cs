@@ -23,7 +23,11 @@ public class LoopManager : MonoBehaviour
 
         main = this;
         DontDestroyOnLoad(this.gameObject);
-        Configs.main.PlayerInventory.Init();
+
+        if (Configs.main.PlayerInventory != null)
+        {
+            Configs.main.PlayerInventory.Init();
+        }
     }
 
     void Start()
