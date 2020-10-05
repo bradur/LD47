@@ -20,7 +20,10 @@ public class Damageable : MonoBehaviour
     float HurtShakeY = 0.0f;
 
     [SerializeField]
-    public int XpPerHit = 1;
+    public float XpPerHitPoint = 0;
+
+    [SerializeField]
+    public int XpOnDie = 0;
 
     SpriteRenderer[] renderers;
     Color[] originalColors;
@@ -91,6 +94,10 @@ public class Damageable : MonoBehaviour
     {
         if (gameObject.tag != "Player")
         {
+            if (XpOnDie > 0)
+            {
+                PlayerResources.main.Gain(PlayerResourceType.StrengthSkill, XpOnDie);
+            }
             Destroy(gameObject);
         }
     }

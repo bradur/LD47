@@ -25,8 +25,8 @@ MonoBehaviour:
     initialValue: 0
     isSkill: 1
     baseXpPerLevel: 10
-  - resourceIcon: {fileID: 21300000, guid: dde3573b1c1f3f4469bb53b790774141, type: 3}
-    resourceColor: {r: 1, g: 0, b: 0.2696724, a: 1}
+  - resourceIcon: {fileID: 21300000, guid: 29084152269723c408a31ea36471bf08, type: 3}
+    resourceColor: {r: 1, g: 1, b: 1, a: 1}
     resourceType: 4
     initialValue: 0
     isSkill: 1
@@ -38,8 +38,8 @@ MonoBehaviour:
     isSkill: 0
     baseXpPerLevel: 10
   distanceMovedPerXp: 2
-  baseDistanceWalkedPerEnergy: 0.5
-  baseEnergySpentByHit: 20
+  baseDistanceWalkedPerEnergy: 0.6
+  baseEnergySpentByHit: 15
   xpBarGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.049433887, b: 0, a: 1}

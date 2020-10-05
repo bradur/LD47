@@ -119,7 +119,7 @@ public class PlayerResources : MonoBehaviour
             .Find(resource => resource.Type == PlayerResourceType.AthleticsSkill)
             .Level;
 
-        return 1.0f + skillLevel * 0.2f;
+        return 1.0f + skillLevel * 0.25f;
     }
 
 
