@@ -89,7 +89,6 @@ public class PlayerStrike : MonoBehaviour, AnimationListener, DamageListener
 
     public void DamageableHit(Damageable damageable)
     {
-        Debug.Log("HIT");
         targetsHit++;
     }
 }
