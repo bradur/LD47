@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 7906864054662702615}
   - component: {fileID: 2003945635111379974}
   - component: {fileID: 2488914564261227330}
+  - component: {fileID: 2773209015201126135}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -515,6 +516,18 @@ MonoBehaviour:
   HurtShakeX: 0
   HurtShakeY: 0
   XpPerHit: 1
+--- !u!114 &2773209015201126135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408905225937141917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d3bcb21b868d641ba6318cd9eecf7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3929547565123645224
 PrefabInstance:
   m_ObjectHideFlags: 0

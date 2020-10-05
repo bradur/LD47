@@ -27,9 +27,9 @@ public class CollisionDamager : MonoBehaviour
             if (damageable.tag == "Player") {
                 PlayerResources.main.Spend(PlayerResourceType.Health, (int)Damage);
             } else {
-                if (damageable.XpPerHit > 0)
+                if (damageable.XpPerHitPoint > 0)
                 {
-                    PlayerResources.main.Gain(PlayerResourceType.StrengthSkill, damageable.XpPerHit);
+                    PlayerResources.main.Gain(PlayerResourceType.StrengthSkill, (int)(damageable.XpPerHitPoint * damage));
                 }
             }
 

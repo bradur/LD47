@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 175176288475229925}
   m_Layer: 0
   m_Name: Breakable Gate Horizontal 2
-  m_TagString: Untagged
+  m_TagString: Gate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,10 +129,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   HurtTint: {r: 0.3207547, g: 0.1739943, b: 0.1739943, a: 1}
-  Health: 15
+  Health: 10
   HurtShakeX: 1
   HurtShakeY: 0
-  XpPerHit: 0
+  XpPerHitPoint: 0
 --- !u!61 &175176288475229925
 BoxCollider2D:
   m_ObjectHideFlags: 0
