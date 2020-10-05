@@ -12,9 +12,11 @@ public class PlayerInventory : ScriptableObject
     [SerializeField]
     private List<InventoryItem> playerItems = new List<InventoryItem>();
     public List<InventoryItem> PlayerItems { get { return playerItems; } }
+    private UIConfig uiConfig;
 
     public void Init()
     {
+        uiConfig = Configs.main.UI;
         playerItems = new List<InventoryItem>();
     }
 
@@ -25,6 +27,10 @@ public class PlayerInventory : ScriptableObject
         {
             Debug.Log("Error: item config is missing item type: " + type.ToString());
             return;
+        }
+        ItemComment itemComment = uiConfig.ItemComments.Where(ic => ic.Item == item.Type).First();
+        if (itemComment != null) {
+            UIManager.main.ShowDialog(itemComment.Comment, Tools.GetPlayerPosition());
         }
 
         playerItems.Add(item);

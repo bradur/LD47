@@ -17,12 +17,14 @@ public class BillboardText : MonoBehaviour
 
     private Image imgIcon;
     private Color defaultColor = new Color(1, 1, 1, 1);
+    private bool isDialog = false;
 
     public void Initialize(string text, Vector3 pos, Transform parent, Sprite icon=null, Color color=default(Color), bool isDialog=false, int fontSize=-1)
     {
         txtTarget = this.FindChildObject("txtTarget").GetComponent<Text>();
         txtMessage = this.FindChildObject("txtMessage").GetComponent<Text>();
         imgIcon = this.FindChildObject("imgIcon").GetComponent<Image>();
+        this.isDialog = isDialog;
         if (icon == null) {
             imgIcon.enabled = false;
         } else {
@@ -64,6 +66,9 @@ public class BillboardText : MonoBehaviour
 
     void Update()
     {
+        if (isDialog) {
+            transform.position = Tools.GetPlayerPositionAboveOffset();
+        }
         transform.rotation = originalRotation * camTransform.rotation;
     }
 
