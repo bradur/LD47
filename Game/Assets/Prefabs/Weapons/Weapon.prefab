@@ -76,6 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 10
   WallDamage: 0
+  HitEffect: {fileID: 6091295622412393331, guid: df6f1facae70bed4998f2a96fed0ea18, type: 3}
 --- !u!1 &5401243450192029075
 GameObject:
   m_ObjectHideFlags: 0

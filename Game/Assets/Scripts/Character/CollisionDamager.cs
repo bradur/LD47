@@ -10,6 +10,9 @@ public class CollisionDamager : MonoBehaviour
     [SerializeField]
     public float WallDamage;
 
+    [SerializeField]
+    GameObject HitEffect;
+
     private List<DamageListener> listeners = new List<DamageListener>();
 
     public void RegisterListener(DamageListener listener)
@@ -22,6 +25,13 @@ public class CollisionDamager : MonoBehaviour
         var damageable = other.GetComponent<Damageable>();
         if (damageable != null)
         {
+            if (HitEffect != null)
+            {
+                var effectPos = other.ClosestPoint(transform.position);
+                var effect = Instantiate(HitEffect);
+                effect.transform.position = effectPos;
+            }
+
             var damage = damageable.type == DamageableType.WALL ? WallDamage : Damage;
             damageable.Hurt(damage);
             if (damageable.tag == "Player" && damageable.isActiveAndEnabled) {

@@ -31,6 +31,9 @@ public class Damageable : MonoBehaviour
 
     public bool IsWinCondition = false;
 
+    [SerializeField]
+    GameObject DestroyEffect;
+
     SpriteRenderer[] renderers;
     Color[] originalColors;
 
@@ -107,13 +110,18 @@ public class Damageable : MonoBehaviour
             }
             if (!DontDestroyOnDie)
             {
+                if (DestroyEffect != null)
+                {
+                    var effect = Instantiate(DestroyEffect);
+                    effect.transform.position = transform.position;
+                }
                 Destroy(gameObject);
             }
             else
             {
                 enabled = false;
             }
-
+            SoundManager.main.PlaySound(SoundType.Explode);
             if (IsWinCondition)
             {
                 LoopManager.main.Win();
