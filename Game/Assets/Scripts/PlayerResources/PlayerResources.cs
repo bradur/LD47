@@ -55,6 +55,18 @@ public class PlayerResources : MonoBehaviour
         UIManager.main.ShowBillboardText(amount + "xp", Tools.GetPlayerPositionWithOffset(), resource.Icon, resource.Color);
     }
 
+    public ResetCause GetResetCause() {
+        PlayerResource energy = config.Resources.Find(r => r.Type == PlayerResourceType.Energy);
+        PlayerResource health = config.Resources.Find(r => r.Type == PlayerResourceType.Health);
+        if (energy.Value <= 0) {
+            return ResetCause.EnergyLoss;
+        }
+        if (health.Value <= 0) {
+            return ResetCause.Death;
+        }
+        return ResetCause.None;
+    }
+
     public bool SpendEnergy(int amount)
     {
         bool spent = Spend(PlayerResourceType.Energy, amount);

@@ -18,24 +18,32 @@ MonoBehaviour:
   textStayDuration: 1
   xpBarUpdateSpeed: 5
   energyLossResetText:
-  - You suddenly feel very tired. You feel as if you're being pulled back to the
-    start...
-  - You can't go on. You lay down to sleep and drift to sleep...
+  - You feel very tired. You close your eyes and feel yourself being pulled back...
+  - You can't go on. You lay down and drift to sleep...
   deathResetText:
   - Is this the end? Or just a new beginning?
-  - You died lol. Get rekt!
+  - You succumb to your wounds. But there is light at the end of the tunnel...
   playerComments:
   - tag: Tent
-    comment: I woke up from there.
+    comment: I woke up in there.
     condition: 0
   - tag: Gate
     comment: Maybe I could break this with something.
-    condition: 0
+    condition: 1
   - tag: Scarecrow
     comment: Need a weapon to whack this with!
     condition: 1
   - tag: BreakableWall
     comment: Need something sharp against this.
+    condition: 2
+  - tag: TotemOne
+    comment: Ouch! I better have a weapon against those!
+    condition: 1
+  - tag: EvilTotem
+    comment: This one looks angry!
+    condition: 1
+  - tag: StoneTotem
+    comment: Looks like it's made of stone!
     condition: 2
   itemComments:
   - comment: I'm gonna have fun with this!
@@ -50,4 +58,7 @@ MonoBehaviour:
     itemType: 5
   - comment: I feel like I'm flying!
     itemType: 6
-  playerCommentMaxDistance: 4
+  playerCommentMaxDistance: 2.5
+  startStory:
+  - You went camping in the Tranquil Grove.
+  - After setting up your tent, you decide to take a look around.

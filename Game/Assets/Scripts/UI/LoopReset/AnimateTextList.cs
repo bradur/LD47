@@ -23,17 +23,26 @@ public class AnimateTextList : MonoBehaviour
 
     public void StartFading(ResetCause cause, ReadyCallback readyCallback)
     {
-        config = Configs.main.UI;
-        string text = DetermineText(cause);
-        if (text == "") {
-            readyCallback();
+        if (config == null) {
+            config = Configs.main.UI;
         }
-        currentText = 0;
         textList = new List<string>();
+        string text = DetermineText(cause);
         foreach (string line in text.Split('\n'))
         {
             textList.Add(line.Trim());
         }
+        StartFading(textList, readyCallback);
+    }
+
+    public void StartFading(List<string> texts, ReadyCallback readyCallback)
+    {
+        config = Configs.main.UI;
+        if (texts.Count == 0) {
+            readyCallback();
+        }
+        currentText = 0;
+        textList = texts;
         if (txtTarget == null)
         {
             txtTarget = this.FindChildObject("txtTarget").GetComponent<Text>();
@@ -51,6 +60,7 @@ public class AnimateTextList : MonoBehaviour
     private string DetermineText(ResetCause cause)
     {
         string text = "";
+        if (config)
         if (cause == ResetCause.Death)
         {
             text = config.DeathResetText[Random.Range(0, config.DeathResetText.Count)];
@@ -81,6 +91,7 @@ public class AnimateTextList : MonoBehaviour
         {
             isRunning = false;
             txtInfo.enabled = false;
+            Debug.Log("Texts ready!");
             readyCallback();
         }
     }

@@ -23,9 +23,7 @@ public class UILoopResetDialog : MonoBehaviour
     private List<UISkillXPGainBar> xpSkillGainBars = new List<UISkillXPGainBar>();
 
     void Start() {
-        Time.timeScale = 0f;
         animator = GetComponent<Animator>();
-        animator.enabled = true;
         container.SetActive(true);
         config = Configs.main.UI;
         gameConfig = Configs.main.Game;
@@ -36,6 +34,14 @@ public class UILoopResetDialog : MonoBehaviour
         txtPressAnyKeyToContinue.enabled = false;
         skillDisplay.SetActive(false);
         container.SetActive(false);
+    }
+
+    public void PlayStartAnimation(bool gameStart){
+        Time.timeScale = 0;
+        container.SetActive(true);
+        animator.enabled = true;
+        animator.SetTrigger("Open");
+        animator.SetBool("GameStart", gameStart);
     }
 
 
@@ -86,6 +92,7 @@ public class UILoopResetDialog : MonoBehaviour
         if (!isResetting) {
             this.cause = cause;
             isResetting = true;
+            animator.enabled = true;
             animator.SetTrigger("Open");
             allReadyCallback = readyCallback;
         }
@@ -102,7 +109,26 @@ public class UILoopResetDialog : MonoBehaviour
     public void Exit() {
         skillDisplay.SetActive(false);
         container.SetActive(false);
-        allReadyCallback();
+        if (allReadyCallback != null) {
+            allReadyCallback();
+        }
+        StartScene();
+    }
+
+    public void GameStartDialog() {
+        animateTextList.StartFading(config.StartStory, AfterGameStart);
+    }
+
+
+    public void AfterGameStart() {
+        animator.SetTrigger("GameStartFade");
+    }
+
+    public void AfterGameStartFade() {
+        animator.SetBool("GameStart", false);
+        animator.enabled = false;
+        container.SetActive(false);
+        StartScene();
     }
 
     public void StartScene() {
@@ -110,6 +136,7 @@ public class UILoopResetDialog : MonoBehaviour
         if (LoopManager.main.LoopCount > 0) {
             UIManager.main.ShowTitleText("Loop {0}".Format(LoopManager.main.LoopCount));
         }
+
     }
 
     void Update() {

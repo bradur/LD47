@@ -165,6 +165,7 @@ MonoBehaviour:
   StrikingRequested: 0
   Walking: 0
   Striking: 0
+  AnimationSpeed: 1
 --- !u!114 &4417474940605774612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ GameObject:
   - component: {fileID: 1543838364870327889}
   m_Layer: 0
   m_Name: Totem
-  m_TagString: Untagged
+  m_TagString: TotemOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,10 +243,12 @@ MonoBehaviour:
   type: 0
   HurtTint: {r: 1, g: 0, b: 0, a: 1}
   Health: 30
+  MaxHealth: 0
   HurtShakeX: 1
   HurtShakeY: 0
   XpPerHitPoint: 0.5
   XpOnDie: 15
+  DontDestroyOnDie: 0
 --- !u!1 &8112209252151115934
 GameObject:
   m_ObjectHideFlags: 0

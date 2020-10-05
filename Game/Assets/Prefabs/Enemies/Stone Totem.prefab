@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone Totem
       objectReference: {fileID: 0}
+    - target: {fileID: 4799551634255110194, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
+      propertyPath: m_TagString
+      value: StoneTotem
+      objectReference: {fileID: 0}
     - target: {fileID: 4917350591062595174, guid: c67ed458e5a129d4fab75c28ea31b986, type: 3}
       propertyPath: m_Sprite
       value: 

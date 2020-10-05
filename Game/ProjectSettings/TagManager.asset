@@ -10,6 +10,9 @@ TagManager:
   - Gate
   - Scarecrow
   - BreakableWall
+  - TotemOne
+  - EvilTotem
+  - StoneTotem
   layers:
   - Default
   - TransparentFX

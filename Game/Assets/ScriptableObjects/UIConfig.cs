@@ -45,6 +45,10 @@ public class UIConfig : ScriptableObject
     [SerializeField]
     private float playerCommentMaxDistance = 2f;
     public float PlayerCommentMaxDistance { get { return playerCommentMaxDistance; } }
+
+    [SerializeField]
+    private List<string> startStory;
+    public List<string> StartStory { get { return startStory; } }
 }
 
 [System.Serializable]
@@ -55,5 +59,5 @@ public class ItemComment
     public string Comment { get { return comment; } }
     [SerializeField]
     private ItemType itemType;
-    public ItemType Item {get {return itemType;}}
+    public ItemType Item { get { return itemType; } }
 }

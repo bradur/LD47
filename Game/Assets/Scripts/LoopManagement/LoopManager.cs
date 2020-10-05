@@ -31,6 +31,7 @@ public class LoopManager : MonoBehaviour
         PlayerResources.main.Init();
         loopCount = 0;
         Reset();
+        UIManager.main.PlayStartAnimation(true);
     }
 
     public void AfterReset()
@@ -46,7 +47,7 @@ public class LoopManager : MonoBehaviour
         {
             loopCount++;
 
-            UIManager.main.OpenResetDialog(ResetCause.EnergyLoss, AfterDialog);
+            UIManager.main.OpenResetDialog(PlayerResources.main.GetResetCause(), AfterDialog);
         }
     }
 
@@ -55,5 +56,8 @@ public class LoopManager : MonoBehaviour
         Debug.Log("Loop #" + loopCount + " starting");
         string sceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        if (loopCount > 1) {
+            UIManager.main.PlayStartAnimation(false);
+        }
     }
 }
