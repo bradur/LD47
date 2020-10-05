@@ -8,6 +8,7 @@ public class PlayerResources : MonoBehaviour
     public static PlayerResources main;
     private GameConfig config;
     PlayerInventory inventory;
+    bool resetWasCalled = false;
 
     void Awake()
     {
@@ -34,11 +35,6 @@ public class PlayerResources : MonoBehaviour
 
     void Update()
     {
-        // there might be resources that are !isSkill that don't cause reset!
-        bool reset = config.Resources.Where(resource => !resource.IsSkill).Any(resource => resource.Value <= 0);
-        if (reset) {
-            LoopManager.main.Reset(true);
-        }
     }
 
     public void Reset()
@@ -75,7 +71,16 @@ public class PlayerResources : MonoBehaviour
             .Find(resource => resource.Type == resourceType)
             .Spend(amount);
         HUDManager.main.Refresh();
+        ResetIfNeeded();
         return success;
+    }
+
+    private void ResetIfNeeded() {
+        bool reset = config.Resources.Where(resource => !resource.IsSkill).Any(resource => resource.Value <= 0);
+        if (reset && !resetWasCalled) {
+            LoopManager.main.Reset(true);
+            resetWasCalled = true;
+        }
     }
 
     public float GetDistanceTraveledPerEnergy()

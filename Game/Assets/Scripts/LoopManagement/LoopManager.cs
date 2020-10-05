@@ -8,6 +8,7 @@ public class LoopManager : MonoBehaviour
     public static LoopManager main;
 
     private int loopCount = 0;
+    public int LoopCount { get { return loopCount; } }
 
     void Awake()
     {
@@ -28,6 +29,7 @@ public class LoopManager : MonoBehaviour
     void Start()
     {
         PlayerResources.main.Init();
+        loopCount = 0;
         Reset();
     }
 
@@ -43,6 +45,7 @@ public class LoopManager : MonoBehaviour
         if (reload)
         {
             loopCount++;
+            Debug.Log(loopCount);
 
             UIManager.main.OpenResetDialog(ResetCause.EnergyLoss, AfterDialog);
         }
