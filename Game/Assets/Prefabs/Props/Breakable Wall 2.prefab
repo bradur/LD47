@@ -129,10 +129,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   HurtTint: {r: 0.3207547, g: 0.1739943, b: 0.1739943, a: 1}
-  Health: 500
+  Health: 1000
   HurtShakeX: 1
   HurtShakeY: 0
   XpPerHitPoint: 0
+  XpOnDie: 0
 --- !u!61 &175176288475229925
 BoxCollider2D:
   m_ObjectHideFlags: 0
