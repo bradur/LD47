@@ -24,3 +24,8 @@ MonoBehaviour:
   deathResetText:
   - Is this the end? Or just a new beginning?
   - You died lol. Get rekt!
+  playerComments:
+  - tag: Tent
+    comment: I woke up from there.
+  - tag: Gate
+    comment: This needs to be broken somehow.

@@ -9,7 +9,7 @@ public class UIConfig : ScriptableObject
     [SerializeField]
     private KeyCode skipKey;
     public KeyCode SkipKey { get { return skipKey; } }
-    
+
 
     [SerializeField]
     private float textFadeInDuration = 1;
@@ -33,4 +33,12 @@ public class UIConfig : ScriptableObject
     [SerializeField]
     private List<string> deathResetText;
     public List<string> DeathResetText { get { return deathResetText; } }
+
+    [SerializeField]
+    private List<PlayerCommentTag> playerComments;
+    public List<PlayerCommentTag> PlayerComments { get { return playerComments; } }
+
+    [SerializeField]
+    private float playerCommentMaxDistance = 2f;
+    public float PlayerCommentMaxDistance { get { return playerCommentMaxDistance; } }
 }
