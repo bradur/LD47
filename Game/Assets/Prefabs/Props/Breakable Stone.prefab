@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4492719603356618194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 7905764578869458407}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 16575299
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3963452542721167683, guid: 834aea61b45c4614482b09a84cd6dd34, type: 3}
+  m_Sprite: {fileID: -7394341316196617118, guid: 834aea61b45c4614482b09a84cd6dd34, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,10 +92,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7905764578869458407}
   - component: {fileID: 4871004565293902742}
-  - component: {fileID: 175176288475229925}
+  - component: {fileID: -773581434217666158}
   m_Layer: 0
-  m_Name: Breakable Wall 2
-  m_TagString: BreakableWall
+  m_Name: Breakable Stone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,8 +134,8 @@ MonoBehaviour:
   HurtShakeY: 0
   XpPerHitPoint: 0
   XpOnDie: 0
---- !u!61 &175176288475229925
-BoxCollider2D:
+--- !u!58 &-773581434217666158
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,16 +147,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.10604477, y: -0.23875427}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 1.1988204
