@@ -48,6 +48,7 @@ public class CharacterAnimator : MonoBehaviour
             if (!Striking)
             {
                 Striking = true;
+                SoundManager.main.PlaySound(SoundType.Swish);
                 StrikingRequested = false;
             }
         }

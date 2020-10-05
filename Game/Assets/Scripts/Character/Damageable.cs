@@ -113,7 +113,7 @@ public class Damageable : MonoBehaviour
             {
                 enabled = false;
             }
-
+            SoundManager.main.PlaySound(SoundType.Explode);
             if (IsWinCondition)
             {
                 LoopManager.main.Win();
